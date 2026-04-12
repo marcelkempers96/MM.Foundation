@@ -60,39 +60,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <!-- Contact Info -->
         <div class="contact-info fade-in">
           <div class="info-card">
-            <div class="info-icon">📧</div>
+            <div class="info-icon">✉</div>
             <h4>Email</h4>
             <a href="mailto:foundation@mimaji.org">foundation@mimaji.org</a>
           </div>
-          <div class="info-card">
-            <div class="info-icon">📞</div>
-            <h4>Phone</h4>
-            <a href="tel:+254758434076">+254 758 434 076</a>
+          <div class="info-card highlight">
+            <div class="info-icon">◆</div>
+            <h4>WhatsApp</h4>
+            <a href="https://wa.me/254758434076" target="_blank" rel="noopener">+254 758 434 076</a>
+            <p class="info-sub">Fastest way to reach us</p>
           </div>
           <div class="info-card">
-            <div class="info-icon">📍</div>
+            <div class="info-icon">◉</div>
             <h4>Location</h4>
             <p>Nairobi, Kenya</p>
+            <p class="info-sub">Pilot phase &mdash; Phase 1</p>
           </div>
           <div class="info-card">
-            <div class="info-icon">💬</div>
-            <h4>WhatsApp</h4>
-            <a href="https://wa.me/254758434076" target="_blank" rel="noopener">Message us on WhatsApp</a>
-          </div>
-          <div class="info-card">
-            <div class="info-icon">🌐</div>
+            <div class="info-icon">↗</div>
             <h4>MiMaji Platform</h4>
             <a href="https://mimaji.co.ke" target="_blank" rel="noopener">mimaji.co.ke</a>
-          </div>
-
-          <div class="social-links">
-            <h4>Follow Us</h4>
-            <div class="social-icons">
-              <a href="#" aria-label="Instagram">IG</a>
-              <a href="#" aria-label="Facebook">FB</a>
-              <a href="#" aria-label="LinkedIn">LI</a>
-              <a href="#" aria-label="X">X</a>
-            </div>
           </div>
         </div>
       </div>
@@ -162,46 +149,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     text-decoration: underline;
   }
 
-  .social-links {
-    margin-top: 1rem;
-    padding: 1.5rem;
-    border-radius: 14px;
-    border: 1px solid var(--border);
-    background: var(--sand);
+  .info-card.highlight {
+    background: linear-gradient(135deg, var(--blue-light), #fff);
+    border-color: var(--blue);
   }
 
-  .social-links h4 {
-    font-family: var(--serif);
-    font-size: 0.95rem;
-    color: var(--blue-deep);
-    margin-bottom: 0.8rem;
-  }
-
-  .social-icons {
-    display: flex;
-    gap: 0.8rem;
-  }
-
-  .social-icons a {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--white);
-    border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    font-weight: 600;
+  .info-sub {
+    font-size: 0.75rem;
     color: var(--text-light);
-    text-decoration: none;
-    transition: all 0.2s;
-  }
-
-  .social-icons a:hover {
-    background: var(--gold);
-    border-color: var(--gold);
-    color: var(--dark);
+    margin-top: 0.3rem;
+    font-style: italic;
   }
 
   @media (max-width: 900px) {

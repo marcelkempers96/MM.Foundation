@@ -15,16 +15,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </svg>
   </section>
 
-  <!-- Impact Numbers -->
+  <!-- Honest Disclosure -->
   <section class="bg-sand">
     <div class="section-inner">
-      <div class="section-label">By The Numbers</div>
-      <div class="section-title">Building Momentum, Changing Lives</div>
-      <div class="impact-numbers fade-in">
-        <div class="impact-num"><span class="value">10K+</span><span class="unit">People Reached</span></div>
-        <div class="impact-num"><span class="value">30+</span><span class="unit">Communities Served</span></div>
-        <div class="impact-num"><span class="value">7</span><span class="unit">Countries Targeted</span></div>
-        <div class="impact-num"><span class="value">100%</span><span class="unit">Commitment to Impact</span></div>
+      <div class="section-label">Where We Are</div>
+      <div class="section-title">Honest About Our Stage</div>
+      <div class="honest-callout fade-in">
+        <p class="honest-lead">MiMaji Foundation is in its <strong>pilot phase</strong>. We have not yet served thousands of people. We do not have years of impact data to point to. What we have is a clear plan, a small dedicated team, real research, and the conviction to build this the right way &mdash; from the ground up.</p>
+        <p>The numbers below are our <strong>2026&ndash;2027 targets</strong>, not historical achievements. As we deliver each programme, we will publish actuals, methodology, and source data publicly. No inflation. No vanity metrics.</p>
       </div>
     </div>
   </section>
@@ -37,33 +35,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="section-subtitle">Our operations span 7 countries, each with unique water challenges and solutions.</div>
       <div class="focus-grid">
         <div class="country-list fade-in">
-          <div class="country-item">
+          <div class="country-item active">
             <span class="flag">🇰🇪</span>
-            <div class="info"><h4>Kenya</h4><p>Headquarters &bull; Active Operations</p></div>
+            <div class="info"><h4>Kenya</h4><p>Phase 1 &bull; Pilot Active</p></div>
           </div>
           <div class="country-item">
             <span class="flag">🇺🇬</span>
-            <div class="info"><h4>Uganda</h4><p>Expansion 2026</p></div>
+            <div class="info"><h4>Uganda</h4><p>Future Expansion</p></div>
           </div>
           <div class="country-item">
             <span class="flag">🇪🇹</span>
-            <div class="info"><h4>Ethiopia</h4><p>Research &amp; Partnerships</p></div>
+            <div class="info"><h4>Ethiopia</h4><p>Future Expansion</p></div>
           </div>
           <div class="country-item">
             <span class="flag">🇸🇴</span>
-            <div class="info"><h4>Somalia</h4><p>Humanitarian Corridor</p></div>
+            <div class="info"><h4>Somalia</h4><p>Future Expansion</p></div>
           </div>
           <div class="country-item">
             <span class="flag">🇷🇼</span>
-            <div class="info"><h4>Rwanda</h4><p>Pilot Planning</p></div>
+            <div class="info"><h4>Rwanda</h4><p>Future Expansion</p></div>
           </div>
           <div class="country-item">
             <span class="flag">🇧🇮</span>
-            <div class="info"><h4>Burundi</h4><p>Needs Assessment</p></div>
+            <div class="info"><h4>Burundi</h4><p>Future Expansion</p></div>
           </div>
           <div class="country-item">
             <span class="flag">🇹🇿</span>
-            <div class="info"><h4>Tanzania</h4><p>Community Outreach</p></div>
+            <div class="info"><h4>Tanzania</h4><p>Future Expansion</p></div>
           </div>
         </div>
         <div class="focus-map fade-in">
@@ -72,8 +70,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div class="ring"></div>
             <div class="ring"></div>
             <div class="map-text">
-              <span class="big">7</span>
-              <span class="sub">Countries across East Africa</span>
+              <span class="big">1</span>
+              <span class="sub">Active &bull; 6 in regional vision</span>
             </div>
           </div>
         </div>
@@ -162,23 +160,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="targets-grid fade-in">
         <div class="target-card">
           <div class="target-metric">10,000</div>
-          <div class="target-label">People reached through water testing and education programmes</div>
-          <div class="target-bar"><div class="target-fill" style="width: 30%"></div></div>
+          <div class="target-label">People reached through water testing and education programmes &mdash; <strong>target</strong></div>
         </div>
         <div class="target-card">
           <div class="target-metric">50</div>
-          <div class="target-label">Communities with water quality data mapped on <a href="/majimap/">MajiMap</a></div>
-          <div class="target-bar"><div class="target-fill" style="width: 15%"></div></div>
+          <div class="target-label">Communities with water quality data on <a href="/majimap/">MajiMap</a> &mdash; <strong>target</strong></div>
         </div>
         <div class="target-card">
           <div class="target-metric">50</div>
-          <div class="target-label">Schools participating in <a href="/water-in-schools/">WASH education programme</a></div>
-          <div class="target-bar"><div class="target-fill" style="width: 10%"></div></div>
+          <div class="target-label">Schools in the <a href="/water-in-schools/">WASH education programme</a> &mdash; <strong>target</strong></div>
         </div>
         <div class="target-card">
-          <div class="target-metric">3</div>
-          <div class="target-label">Countries with active Foundation operations</div>
-          <div class="target-bar"><div class="target-fill" style="width: 33%"></div></div>
+          <div class="target-metric">1</div>
+          <div class="target-label">Country with active pilot programme &mdash; <strong>Kenya, Phase 1</strong></div>
         </div>
       </div>
 
@@ -361,5 +355,35 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-size: 0.95rem;
     color: var(--text-light);
     margin-bottom: 1rem;
+  }
+
+  /* Honest callout */
+  .honest-callout {
+    margin-top: 2rem;
+    padding: 2.5rem;
+    border-radius: 16px;
+    background: var(--white);
+    border-left: 4px solid var(--gold);
+  }
+
+  .honest-callout p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .honest-callout p:last-child {
+    margin-bottom: 0;
+  }
+
+  .honest-lead {
+    font-size: 1.05rem !important;
+    color: var(--blue-deep) !important;
+  }
+
+  .honest-callout strong {
+    color: var(--blue-deep);
+    font-weight: 600;
   }
 </style>

@@ -524,6 +524,16 @@ section {
   border-color: rgba(255, 255, 255, 0.15);
 }
 
+.country-item.active {
+  background: rgba(244, 169, 48, 0.1);
+  border-color: rgba(244, 169, 48, 0.3);
+}
+
+.country-item.active .info p {
+  color: var(--gold);
+  font-weight: 600;
+}
+
 .country-item .flag { font-size: 1.6rem; }
 .country-item .info h4 { font-size: 0.92rem; font-weight: 600; color: var(--white); }
 .country-item .info p { font-size: 0.72rem; color: rgba(255, 255, 255, 0.5); margin-top: 0.1rem; }

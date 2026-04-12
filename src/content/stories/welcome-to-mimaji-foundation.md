@@ -2,7 +2,7 @@
 title: "Welcome to MiMaji Foundation"
 description: "Introducing MiMaji Foundation — our mission to bring clean, safe water access to every community in East Africa and beyond."
 date: 2025-06-01
-author: "Marcel"
+author: "MiMaji Foundation"
 category: "news"
 image: "https://images.unsplash.com/photo-1594398901394-4e34b2348fb0?w=800&h=450&fit=crop"
 imageAlt: "Children at a water point in East Africa"
