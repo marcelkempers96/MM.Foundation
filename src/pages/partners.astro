@@ -1,0 +1,250 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Partners"
+  description="Partner with MiMaji Foundation to solve the water crisis in East Africa. We work with funding partners, implementation partners, community organisations, and technology providers."
+>
+  <section class="page-hero">
+    <div class="hero-badge">Collaborate With Us</div>
+    <h1>Our <em>Partners</em></h1>
+    <p>Great change requires great partnerships. We work with organisations, institutions, and businesses that share our commitment to clean water access for all.</p>
+    <svg class="hero-wave" viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,60 C360,100 720,20 1080,60 C1260,80 1380,50 1440,60 L1440,100 L0,100Z" fill="white"/>
+    </svg>
+  </section>
+
+  <!-- Partner Categories -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">Partnership Model</div>
+      <div class="section-title">How We Partner</div>
+      <div class="section-subtitle">We structure partnerships around four key categories — each designed for maximum mutual impact.</div>
+
+      <div class="partner-categories fade-in">
+        <div class="partner-cat">
+          <div class="cat-icon">💰</div>
+          <h3>Funding Partners</h3>
+          <p>Grants, donations, and institutional funding that power our programmes — from water quality testing to community education and MajiMap development.</p>
+          <span class="cat-examples">Foundations, international development agencies, CSR programmes</span>
+        </div>
+        <div class="partner-cat">
+          <div class="cat-icon">🤝</div>
+          <h3>Implementation Partners</h3>
+          <p>On-the-ground organisations that help us deliver programmes in communities — from NGOs to community health worker networks.</p>
+          <span class="cat-examples">Local NGOs, community organisations, government bodies</span>
+        </div>
+        <div class="partner-cat">
+          <div class="cat-icon">🏫</div>
+          <h3>Community Partners</h3>
+          <p>Schools, women's groups, and community leaders who co-create solutions with us and ensure local ownership of water access programmes.</p>
+          <span class="cat-examples">Schools, community groups, local leaders, CHVs</span>
+        </div>
+        <div class="partner-cat">
+          <div class="cat-icon">💻</div>
+          <h3>Technology Partners</h3>
+          <p>Technology providers and data organisations that support MajiMap, our data collection, and the digital infrastructure behind our work.</p>
+          <span class="cat-examples">Tech companies, universities, data platforms</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Partner -->
+  <section class="bg-sand">
+    <div class="section-inner">
+      <div class="section-label">Technology Partner</div>
+      <div class="section-title">Powered by MiMaji</div>
+
+      <div class="tech-partner fade-in">
+        <div class="tech-content">
+          <h3><a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji — mimaji.co.ke</a></h3>
+          <p>MiMaji Foundation's core technology partner is the <a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji water delivery platform</a> — Kenya's leading water technology company. The platform provides:</p>
+          <ul>
+            <li>Verified water source and vendor data for <a href="/majimap/">MajiMap</a></li>
+            <li>Subsidised delivery infrastructure for vulnerable communities</li>
+            <li>Water quality database and testing methodology</li>
+            <li>Revenue support through platform operations</li>
+          </ul>
+          <a href="https://mimaji.co.ke" target="_blank" rel="noopener" class="btn btn-primary">Visit MiMaji Platform &rarr;</a>
+        </div>
+        <div class="tech-visual">
+          <div class="tech-card-inner">
+            <span class="tech-icon">📱</span>
+            <h4>MiMaji.co.ke</h4>
+            <p>Water delivery. Quality verified. Fair pricing. Technology-driven.</p>
+            <a href="https://mimaji.co.ke" target="_blank" rel="noopener">Explore Platform &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Become a Partner CTA -->
+  <section class="cta-section">
+    <div class="section-title">Become a Partner</div>
+    <p>We're actively seeking partners who share our vision of clean water access for every community. Let's create lasting impact together.</p>
+    <div class="cta-buttons">
+      <a href="/contact/" class="btn btn-white">Partner With Us &rarr;</a>
+      <a href="/programs/" class="btn btn-outline">View Our Programs</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .partner-categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .partner-cat {
+    padding: 2.2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    transition: all 0.3s;
+  }
+
+  .partner-cat:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(10, 94, 181, 0.1);
+  }
+
+  .cat-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .partner-cat h3 {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--blue-deep);
+    margin-bottom: 0.6rem;
+  }
+
+  .partner-cat p {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 0.8rem;
+  }
+
+  .cat-examples {
+    font-size: 0.75rem;
+    color: var(--teal);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .tech-partner {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-top: 3rem;
+  }
+
+  .tech-content h3 {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    color: var(--blue-deep);
+    margin-bottom: 1rem;
+  }
+
+  .tech-content h3 a {
+    color: var(--blue-deep);
+    text-decoration: none;
+  }
+
+  .tech-content h3 a:hover {
+    color: var(--blue);
+  }
+
+  .tech-content p {
+    font-size: 0.92rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .tech-content a:not(.btn) {
+    color: var(--blue);
+    font-weight: 600;
+  }
+
+  .tech-content ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .tech-content ul li {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    padding: 0.35rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .tech-content ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-weight: 600;
+  }
+
+  .tech-card-inner {
+    padding: 2.5rem;
+    border-radius: 16px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .tech-card-inner:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(10, 94, 181, 0.1);
+  }
+
+  .tech-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .tech-card-inner h4 {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--blue-deep);
+    margin-bottom: 0.5rem;
+  }
+
+  .tech-card-inner p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .tech-card-inner > a {
+    color: var(--blue);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 900px) {
+    .partner-categories {
+      grid-template-columns: 1fr;
+    }
+
+    .tech-partner {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

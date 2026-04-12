@@ -1,0 +1,223 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Water in Schools"
+  description="MiMaji Foundation's WASH education programme brings water quality testing, hygiene education, and student ambassador training to schools across Nairobi and East Africa."
+>
+  <section class="page-hero">
+    <div class="hero-badge">WASH Education</div>
+    <h1>Water in <em>Schools</em></h1>
+    <p>Empowering the next generation with the knowledge and tools to protect their communities' water — one school at a time.</p>
+    <svg class="hero-wave" viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,60 C360,100 720,20 1080,60 C1260,80 1380,50 1440,60 L1440,100 L0,100Z" fill="white"/>
+    </svg>
+  </section>
+
+  <!-- Programme Overview -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">The Programme</div>
+      <div class="section-title">Building Water Champions in Schools</div>
+      <div class="section-subtitle">Our school WASH programme combines hands-on water quality testing with hygiene education and student leadership — creating a generation of water advocates.</div>
+
+      <div class="programme-grid fade-in">
+        <div class="programme-card">
+          <div class="prog-num">01</div>
+          <div class="prog-icon">🔬</div>
+          <h3>Water Quality Testing Workshops</h3>
+          <p>Students learn to test water using TDS meters and basic test kits. They test their school's water supply, understand what the results mean, and learn how to identify safe vs. unsafe water sources.</p>
+        </div>
+        <div class="programme-card">
+          <div class="prog-num">02</div>
+          <div class="prog-icon">🧼</div>
+          <h3>Hygiene Education Curriculum</h3>
+          <p>Age-appropriate lessons on handwashing, safe water storage, treatment methods, and disease prevention. Materials are adapted for local contexts, languages, and school levels.</p>
+        </div>
+        <div class="programme-card">
+          <div class="prog-num">03</div>
+          <div class="prog-icon">🌟</div>
+          <h3>Student Ambassador Programme</h3>
+          <p>Selected students become Water Ambassadors — trained peer educators who share safe water practices in their homes and communities. They collect neighbourhood water data for <a href="/majimap/">MajiMap</a>.</p>
+        </div>
+        <div class="programme-card">
+          <div class="prog-num">04</div>
+          <div class="prog-icon">📊</div>
+          <h3>Measurable Outcomes</h3>
+          <p>We track schools visited, students reached, behaviour change indicators, and community ripple effects. Every school programme includes pre/post knowledge assessments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact targets -->
+  <section class="bg-sand">
+    <div class="section-inner">
+      <div class="section-label">Targets</div>
+      <div class="section-title">Our School Programme Goals</div>
+      <div class="impact-numbers fade-in">
+        <div class="impact-num"><span class="value">50+</span><span class="unit">Schools Targeted</span></div>
+        <div class="impact-num"><span class="value">5,000+</span><span class="unit">Students Reached</span></div>
+        <div class="impact-num"><span class="value">200+</span><span class="unit">Water Ambassadors Trained</span></div>
+        <div class="impact-num"><span class="value">100%</span><span class="unit">Schools Tested for Water Quality</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SDG Alignment -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">Global Alignment</div>
+      <div class="section-title">Aligned with the Sustainable Development Goals</div>
+      <div class="section-subtitle">Our school WASH programme directly contributes to multiple SDGs — making it a strong candidate for institutional and grant funding.</div>
+
+      <div class="sdg-grid fade-in">
+        <div class="sdg-card">
+          <div class="sdg-num">SDG 6</div>
+          <h4>Clean Water & Sanitation</h4>
+          <p>Direct contribution through water quality testing and safe water education in schools.</p>
+        </div>
+        <div class="sdg-card">
+          <div class="sdg-num">SDG 3</div>
+          <h4>Good Health & Well-being</h4>
+          <p>Reducing waterborne diseases through hygiene education and safe water practice adoption.</p>
+        </div>
+        <div class="sdg-card">
+          <div class="sdg-num">SDG 4</div>
+          <h4>Quality Education</h4>
+          <p>Keeping children in school by reducing water-related illness and time spent collecting water.</p>
+        </div>
+        <div class="sdg-card">
+          <div class="sdg-num">SDG 5</div>
+          <h4>Gender Equality</h4>
+          <p>Empowering girls through water access — reducing collection burden and increasing school attendance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-title">Bring Clean Water Education to Your School</div>
+    <p>We partner with schools, county governments, and education organisations to deliver WASH programmes. Contact us to bring water testing and education to your community.</p>
+    <div class="cta-buttons">
+      <a href="/contact/" class="btn btn-white">Get In Touch &rarr;</a>
+      <a href="/take-action/" class="btn btn-outline">Support This Programme</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .programme-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .programme-card {
+    padding: 2.2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .programme-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(10, 94, 181, 0.1);
+  }
+
+  .prog-num {
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: var(--blue);
+    opacity: 0.15;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .prog-icon {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .programme-card h3 {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    color: var(--blue-deep);
+    margin-bottom: 0.6rem;
+  }
+
+  .programme-card p {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+
+  .programme-card a {
+    color: var(--blue);
+    font-weight: 600;
+  }
+
+  .sdg-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .sdg-card {
+    padding: 1.5rem;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .sdg-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(10, 94, 181, 0.08);
+  }
+
+  .sdg-num {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--teal);
+    margin-bottom: 0.4rem;
+  }
+
+  .sdg-card h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--blue-deep);
+    margin-bottom: 0.4rem;
+  }
+
+  .sdg-card p {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 900px) {
+    .programme-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .sdg-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sdg-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,173 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allStories = (await getCollection('stories'))
+  .filter(story => !story.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const categoryLabels: Record<string, string> = {
+  impact: 'Impact Story',
+  data: 'Data & Research',
+  community: 'Community',
+  news: 'News',
+  explainer: 'Explainer',
+};
+
+const categoryColors: Record<string, string> = {
+  impact: 'var(--teal)',
+  data: 'var(--blue)',
+  community: 'var(--gold)',
+  news: 'var(--sky)',
+  explainer: 'var(--blue-deep)',
+};
+---
+
+<BaseLayout
+  title="Stories"
+  description="News, impact stories, and water crisis explainers from MiMaji Foundation. Stay updated on our work across East Africa and the latest MajiMap data releases."
+>
+  <section class="page-hero">
+    <div class="hero-badge">News & Updates</div>
+    <h1>News & <em>Stories</em></h1>
+    <p>Impact stories, water crisis explainers, data releases, and updates from our work across East Africa.</p>
+    <svg class="hero-wave" viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,60 C360,100 720,20 1080,60 C1260,80 1380,50 1440,60 L1440,100 L0,100Z" fill="white"/>
+    </svg>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      {allStories.length === 0 ? (
+        <div class="empty-state">
+          <p>Stories coming soon. Follow us on social media for the latest updates.</p>
+        </div>
+      ) : (
+        <div class="stories-grid fade-in">
+          {allStories.map(story => (
+            <a href={`/stories/${story.id.replace(/\.md$/, '')}/`} class="story-card">
+              {story.data.image && (
+                <div class="story-image">
+                  <img src={story.data.image} alt={story.data.imageAlt || story.data.title} loading="lazy" />
+                </div>
+              )}
+              <div class="story-content">
+                <span class="story-cat" style={`color: ${categoryColors[story.data.category]}`}>
+                  {categoryLabels[story.data.category]}
+                </span>
+                <h3>{story.data.title}</h3>
+                <p>{story.data.description}</p>
+                <span class="story-date">
+                  {story.data.date.toLocaleDateString('en-GB', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-title">Stay Updated</div>
+    <p>Follow our journey on social media or get in touch to receive our latest reports and stories directly.</p>
+    <div class="cta-buttons">
+      <a href="/contact/" class="btn btn-white">Contact Us &rarr;</a>
+      <a href="/resources/" class="btn btn-outline">View Resources</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .stories-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .story-card {
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    overflow: hidden;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .story-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(10, 94, 181, 0.1);
+  }
+
+  .story-image {
+    aspect-ratio: 16/9;
+    overflow: hidden;
+  }
+
+  .story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+
+  .story-card:hover .story-image img {
+    transform: scale(1.05);
+  }
+
+  .story-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .story-cat {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .story-content h3 {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--blue-deep);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .story-content p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 1rem;
+  }
+
+  .story-date {
+    font-size: 0.75rem;
+    color: var(--text-light);
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-light);
+  }
+
+  @media (max-width: 900px) {
+    .stories-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

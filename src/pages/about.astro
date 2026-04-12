@@ -15,16 +15,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </svg>
   </section>
 
-  <!-- Origin Story -->
+  <!-- Founder Story -->
   <section>
     <div class="section-inner">
-      <div class="section-label">Our Origin</div>
-      <div class="section-title">Born from the MiMaji Platform</div>
+      <div class="section-label">The Founder</div>
+      <div class="section-title">Why Marcel Started MiMaji</div>
       <div class="about-grid fade-in">
         <div class="about-text">
-          <p>MiMaji Foundation was established in 2025 as the social impact arm of <a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji</a> — Kenya's leading water delivery technology platform. While MiMaji the business connects urban consumers to quality water delivery, the Foundation extends this mission to those who need it most.</p>
-          <p>We saw that the same technology powering convenient water delivery in Nairobi could be adapted to serve underserved communities — mapping water quality, educating households, and subsidising access for vulnerable populations.</p>
-          <p>Headquartered in Nairobi, Kenya, and operating as a Reef Support B.V. initiative, MiMaji Foundation bridges the gap between commercial innovation and social responsibility.</p>
+          <p>While building <a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji</a> as a water delivery platform in Nairobi, Marcel discovered something troubling: the communities that needed clean water most were paying the highest prices for the worst quality. Residents in Kibera pay up to 10 times more per litre than those in Karen.</p>
+          <p>This wasn't just a market failure — it was a human rights issue. The same technology powering convenient water delivery could be adapted to serve underserved communities — mapping water quality, educating households, and subsidising access for vulnerable populations.</p>
+          <p>MiMaji Foundation was established in 2025 as the social impact arm of MiMaji. Headquartered in Nairobi, Kenya, and operating as a Reef Support B.V. initiative, the Foundation bridges the gap between commercial innovation and social responsibility.</p>
         </div>
         <div class="about-values">
           <div class="value-card">
@@ -75,12 +75,54 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  <!-- Timeline -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">Our Journey</div>
+      <div class="section-title">Milestones & Roadmap</div>
+      <div class="timeline fade-in">
+        <div class="timeline-item completed">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2024</div>
+            <h4>MiMaji Platform Launch</h4>
+            <p><a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji.co.ke</a> launches as Kenya's water delivery technology platform. Early research reveals the depth of water pricing inequality.</p>
+          </div>
+        </div>
+        <div class="timeline-item completed">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2025</div>
+            <h4>Foundation Established</h4>
+            <p>MiMaji Foundation launches as the social impact arm. Nairobi Water Price Map research completed. First community water testing events.</p>
+          </div>
+        </div>
+        <div class="timeline-item active">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2026</div>
+            <h4>MajiMap & School Programmes</h4>
+            <p><a href="/majimap/">MajiMap</a> Phase 1 launch. <a href="/water-in-schools/">Water in Schools</a> programme begins. Uganda expansion planning. First grant applications submitted.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2027+</div>
+            <h4>East Africa Scale</h4>
+            <p>Expand across 7 East African countries. MajiMap interactive platform. Strategic partnerships with international funders. 50,000+ people reached.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="cta-section">
     <div class="section-title">Join Us in Our Mission</div>
     <p>Whether as a partner, volunteer, or supporter — there's a place for you at MiMaji Foundation. Together, we can make clean water accessible to every community.</p>
     <div class="cta-buttons">
-      <a href="/contact/" class="btn btn-white">Get In Touch &rarr;</a>
+      <a href="/take-action/" class="btn btn-white">Take Action &rarr;</a>
       <a href="/programs/" class="btn btn-outline">View Programs</a>
     </div>
   </section>
@@ -218,5 +260,80 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .about-values {
       grid-template-columns: 1fr;
     }
+  }
+
+  /* Timeline */
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+    margin-top: 3rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 2.5rem;
+    padding-left: 2rem;
+  }
+
+  .timeline-item:last-child {
+    padding-bottom: 0;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: -2rem;
+    top: 0.3rem;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--border);
+    border: 3px solid var(--white);
+    z-index: 1;
+  }
+
+  .timeline-item.completed .timeline-marker {
+    background: var(--teal);
+  }
+
+  .timeline-item.active .timeline-marker {
+    background: var(--gold);
+    box-shadow: 0 0 0 4px rgba(244, 169, 48, 0.2);
+  }
+
+  .timeline-year {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 0.3rem;
+  }
+
+  .timeline-content h4 {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    color: var(--blue-deep);
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+
+  .timeline-content a {
+    color: var(--blue);
+    font-weight: 600;
   }
 </style>

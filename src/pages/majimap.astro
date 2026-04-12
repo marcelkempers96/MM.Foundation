@@ -1,0 +1,375 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="MajiMap"
+  description="MajiMap is an interactive water data platform mapping water pricing, quality, and access across Nairobi and East Africa. Making water inequality visible, measurable, and actionable."
+>
+  <section class="page-hero">
+    <div class="hero-badge"><span class="pulse"></span> Coming Soon</div>
+    <h1>Maji<em>Map</em></h1>
+    <p>An interactive, public water data platform that makes water access, pricing, and quality visible across Nairobi and East Africa.</p>
+    <svg class="hero-wave" viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,60 C360,100 720,20 1080,60 C1260,80 1380,50 1440,60 L1440,100 L0,100Z" fill="white"/>
+    </svg>
+  </section>
+
+  <!-- What is MajiMap -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">The Concept</div>
+      <div class="section-title">Making Water Inequality Visible</div>
+      <div class="section-subtitle">MajiMap turns invisible inequality into undeniable evidence — a crowd-sourced and platform-verified data layer for water across East Africa.</div>
+
+      <div class="concept-callout fade-in">
+        <h3>"Why does water cost 10x more in Kibera than in Karen?"</h3>
+        <p>MajiMap answers this question with data. It is MiMaji Foundation's flagship data product — the tool that transforms assumptions into actionable, shareable evidence.</p>
+      </div>
+
+      <div class="layers-grid fade-in">
+        <div class="layer-card">
+          <div class="layer-num">01</div>
+          <div class="layer-icon">💰</div>
+          <h3>Water Pricing</h3>
+          <ul>
+            <li>Average price per litre by estate and neighbourhood</li>
+            <li>Price comparison: informal vendor vs. utility vs. bottled vs. <a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji platform</a></li>
+            <li>Price inequality index across income levels</li>
+            <li>Historical price trends as data accumulates</li>
+          </ul>
+        </div>
+        <div class="layer-card">
+          <div class="layer-num">02</div>
+          <div class="layer-icon">🔬</div>
+          <h3>Water Quality</h3>
+          <ul>
+            <li>TDS readings by location from Foundation testing events</li>
+            <li>Bacteriological test results where available</li>
+            <li>Quality rating: Safe / Caution / Unsafe (green/amber/red)</li>
+            <li>Source type: borehole, piped, vendor, rainwater</li>
+          </ul>
+        </div>
+        <div class="layer-card">
+          <div class="layer-num">03</div>
+          <div class="layer-icon">📍</div>
+          <h3>Access & Coverage</h3>
+          <ul>
+            <li>Coverage gaps — areas with no reliable clean water</li>
+            <li>Vendor and access point locations</li>
+            <li>Average distance to nearest clean water source</li>
+            <li>Time-to-water estimates for residents</li>
+          </ul>
+        </div>
+        <div class="layer-card">
+          <div class="layer-num">04</div>
+          <div class="layer-icon">📱</div>
+          <h3>MiMaji Integration</h3>
+          <ul>
+            <li><a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji</a> delivery coverage zones</li>
+            <li>Verified vendor locations on the platform</li>
+            <li>Real-time pricing from platform data</li>
+            <li>"Order water now" for covered areas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why It Matters -->
+  <section class="bg-sand">
+    <div class="section-inner">
+      <div class="section-label">Why It Matters</div>
+      <div class="section-title">Data That Drives Change</div>
+
+      <div class="matters-grid fade-in">
+        <div class="matters-card">
+          <h4>For Donors & Grant Funders</h4>
+          <p>MajiMap provides the baseline data and measurable outcomes that institutional funders require. It proves MiMaji Foundation is building infrastructure, not just running events.</p>
+        </div>
+        <div class="matters-card">
+          <h4>For Advocacy & Policy</h4>
+          <p>When water pricing inequality is public, visualised, and shareable, it becomes a tool for holding utilities and governments accountable. MajiMap makes this impossible to ignore.</p>
+        </div>
+        <div class="matters-card">
+          <h4>For Communities</h4>
+          <p>Residents discover their water quality data, see the price gap, and find better alternatives — including verified water delivery through the <a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji platform</a>.</p>
+        </div>
+        <div class="matters-card">
+          <h4>For Media</h4>
+          <p>Data-driven inequality stories go viral. A MajiMap visual showing the price gap across Nairobi is the kind of content Nation Africa, The Guardian, and Al Jazeera publish.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">Roadmap</div>
+      <div class="section-title">Building MajiMap Step by Step</div>
+
+      <div class="roadmap fade-in">
+        <div class="roadmap-item active">
+          <div class="roadmap-marker"></div>
+          <div class="roadmap-content">
+            <div class="roadmap-phase">Phase 1 — Now</div>
+            <h4>Static Data Visualisation</h4>
+            <p>Using existing Nairobi Water Price Map research to build the first interactive visualisation. Colour-coded estate map with price overlays and shareable social media assets.</p>
+          </div>
+        </div>
+        <div class="roadmap-item">
+          <div class="roadmap-marker"></div>
+          <div class="roadmap-content">
+            <div class="roadmap-phase">Phase 2</div>
+            <h4>Water Quality Data Layer</h4>
+            <p>Community water quality testing events across target estates. TDS and bacteriological testing with green/amber/red quality ratings added to the map.</p>
+          </div>
+        </div>
+        <div class="roadmap-item">
+          <div class="roadmap-marker"></div>
+          <div class="roadmap-content">
+            <div class="roadmap-phase">Phase 3</div>
+            <h4>Interactive Platform</h4>
+            <p>Searchable, zoomable map interface. Community submission feature for residents to report local water data. Integration with MiMaji platform vendor data for real-time pricing.</p>
+          </div>
+        </div>
+        <div class="roadmap-item">
+          <div class="roadmap-marker"></div>
+          <div class="roadmap-content">
+            <div class="roadmap-phase">Phase 4</div>
+            <h4>East Africa Expansion</h4>
+            <p>Expand to Kampala, Dar es Salaam, Addis Ababa, Kigali, Bujumbura, and Mogadishu. Position MajiMap as the definitive public water data source for East Africa.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-title">Help Us Build MajiMap</div>
+    <p>MajiMap needs data partners, funding, and community contributors. Whether you're a researcher, donor, or local resident — your contribution shapes the map.</p>
+    <div class="cta-buttons">
+      <a href="/contact/" class="btn btn-white">Get Involved &rarr;</a>
+      <a href="/take-action/" class="btn btn-outline">Support Our Work</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .pulse {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse 2s infinite;
+  }
+
+  .concept-callout {
+    background: linear-gradient(135deg, var(--blue-deep), var(--blue));
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    color: var(--white);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .concept-callout h3 {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    color: var(--gold);
+    font-style: italic;
+    margin-bottom: 0.8rem;
+  }
+
+  .concept-callout p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .layers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .layer-card {
+    padding: 2.2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    transition: all 0.3s;
+    position: relative;
+  }
+
+  .layer-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(10, 94, 181, 0.1);
+  }
+
+  .layer-num {
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: var(--blue);
+    opacity: 0.2;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .layer-icon {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .layer-card h3 {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--blue-deep);
+    margin-bottom: 0.8rem;
+  }
+
+  .layer-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .layer-card ul li {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    padding: 0.35rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .layer-card ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-weight: 600;
+  }
+
+  .layer-card a {
+    color: var(--blue);
+    font-weight: 600;
+  }
+
+  .matters-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .matters-card {
+    padding: 2rem;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    transition: all 0.3s;
+  }
+
+  .matters-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(10, 94, 181, 0.08);
+  }
+
+  .matters-card h4 {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    color: var(--blue-deep);
+    margin-bottom: 0.6rem;
+  }
+
+  .matters-card p {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+
+  .matters-card a {
+    color: var(--blue);
+    font-weight: 600;
+  }
+
+  /* Roadmap */
+  .roadmap {
+    margin-top: 3rem;
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .roadmap::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+
+  .roadmap-item {
+    position: relative;
+    padding-bottom: 2.5rem;
+    padding-left: 2rem;
+  }
+
+  .roadmap-item:last-child {
+    padding-bottom: 0;
+  }
+
+  .roadmap-marker {
+    position: absolute;
+    left: -2rem;
+    top: 0.3rem;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--border);
+    border: 3px solid var(--white);
+    z-index: 1;
+  }
+
+  .roadmap-item.active .roadmap-marker {
+    background: var(--gold);
+    box-shadow: 0 0 0 4px rgba(244, 169, 48, 0.2);
+  }
+
+  .roadmap-phase {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 0.3rem;
+  }
+
+  .roadmap-content h4 {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    color: var(--blue-deep);
+    margin-bottom: 0.5rem;
+  }
+
+  .roadmap-content p {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 900px) {
+    .layers-grid,
+    .matters-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,543 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="The Water Crisis"
+  description="400 million people in Sub-Saharan Africa lack safe water. Learn about the water crisis across East Africa — the health impact, gender inequality, price exploitation, and why urgent action is needed."
+>
+  <section class="page-hero">
+    <div class="hero-badge">Understanding the Crisis</div>
+    <h1>The Water <em>Crisis</em></h1>
+    <p>Sub-Saharan Africa carries the world's heaviest water burden. These are the facts driving our work — and the urgency behind every programme we run.</p>
+    <svg class="hero-wave" viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,60 C360,100 720,20 1080,60 C1260,80 1380,50 1440,60 L1440,100 L0,100Z" fill="white"/>
+    </svg>
+  </section>
+
+  <!-- Global Stats -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">The Scale</div>
+      <div class="section-title">A Crisis Hiding in Plain Sight</div>
+      <div class="section-subtitle">While water scarcity is a global challenge, Sub-Saharan Africa faces the deepest and most urgent crisis — and within cities like Nairobi, the inequality is staggering.</div>
+
+      <div class="stat-grid fade-in">
+        <div class="stat-card large">
+          <span class="stat-value">400M+</span>
+          <span class="stat-label">People in Sub-Saharan Africa lack access to safe drinking water</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">6+ hrs</span>
+          <span class="stat-label">Average daily water collection time for women and girls in rural East Africa</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">10x</span>
+          <span class="stat-label">More expensive — what residents in Kibera pay for water compared to those in Karen, Nairobi</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">297K</span>
+          <span class="stat-label">Children under 5 die annually from waterborne diseases in Africa</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Crisis Image + Facts -->
+  <section class="bg-sand">
+    <div class="section-inner">
+      <div class="section-label">East Africa</div>
+      <div class="section-title">The Region at the Heart of the Crisis</div>
+      <div class="crisis-grid fade-in">
+        <div class="crisis-visual">
+          <img src="https://images.unsplash.com/photo-1594398901394-4e34b2348fb0?w=800&h=600&fit=crop" alt="Children collecting water in East Africa" loading="lazy" />
+          <div class="overlay">
+            <p>Every day, millions of children walk hours to collect water instead of attending school.</p>
+          </div>
+        </div>
+        <div class="crisis-facts">
+          <div class="crisis-fact">
+            <div class="icon">💧</div>
+            <div>
+              <h4>Access Rates Are the Lowest Globally</h4>
+              <p>Sub-Saharan Africa has lower rates of safe water access than any other global region. In rural East Africa, some communities have zero access to piped or treated water.</p>
+            </div>
+          </div>
+          <div class="crisis-fact">
+            <div class="icon">🚶</div>
+            <div>
+              <h4>Women Bear the Burden</h4>
+              <p>In rural East Africa, women and girls are responsible for water collection — walking over 6 kilometres each day, sacrificing education, income, and safety.</p>
+            </div>
+          </div>
+          <div class="crisis-fact">
+            <div class="icon">⚠️</div>
+            <div>
+              <h4>Waterborne Diseases Kill Children</h4>
+              <p>Cholera, typhoid, and diarrheal diseases caused by contaminated water disproportionately kill children under 5. Most of these deaths are entirely preventable.</p>
+            </div>
+          </div>
+          <div class="crisis-fact">
+            <div class="icon">📉</div>
+            <div>
+              <h4>Economies Held Back</h4>
+              <p>The African Development Bank estimates water insecurity costs African economies billions annually in lost productivity, healthcare costs, and stunted human capital development.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Urban Crisis -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">The Urban Crisis</div>
+      <div class="section-title">Even in Nairobi, Millions Are Failed by the System</div>
+      <div class="section-subtitle">The water crisis isn't just rural. In Africa's fastest-growing cities, informal settlements pay the highest prices for the worst quality water.</div>
+
+      <div class="urban-grid fade-in">
+        <div class="urban-card">
+          <div class="urban-icon">🏘️</div>
+          <h3>Informal Water Vendors</h3>
+          <p>Millions of urban residents in Nairobi, Kampala, and Dar es Salaam depend on informal water vendors — unregulated, untested, and overpriced. These vendors fill a gap that governments and utilities have failed to close.</p>
+        </div>
+        <div class="urban-card">
+          <div class="urban-icon">💰</div>
+          <h3>Price Exploitation</h3>
+          <p>Residents in low-income estates pay up to 10 times more per litre of water than those in wealthy neighbourhoods connected to municipal supply. The poorest pay the most for the worst quality.</p>
+        </div>
+        <div class="urban-card">
+          <div class="urban-icon">🔬</div>
+          <h3>Unknown Quality</h3>
+          <p>Most informal water sources are never tested. Residents have no way to know if their water is safe — no labels, no testing, no accountability. This is the gap MiMaji Foundation's <a href="/majimap/">MajiMap</a> is designed to close.</p>
+        </div>
+      </div>
+
+      <div class="price-callout fade-in">
+        <div class="callout-inner">
+          <h3>"Why does water cost 10x more in Kibera than in Karen?"</h3>
+          <p>This is the question that launched <a href="/majimap/">MajiMap</a> — our interactive data platform that makes water pricing inequality visible, measurable, and impossible to ignore.</p>
+          <a href="/majimap/" class="btn btn-primary">Explore MajiMap &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Country Breakdown -->
+  <section class="focus-section">
+    <div class="section-inner">
+      <div class="section-label">Country by Country</div>
+      <div class="section-title">The Crisis Across East Africa</div>
+      <div class="section-subtitle">Each country faces unique water challenges — but the underlying crisis is shared across the region.</div>
+      <div class="country-breakdown fade-in">
+        <div class="country-card">
+          <span class="country-flag">🇰🇪</span>
+          <h4>Kenya</h4>
+          <p>28 million Kenyans lack safe water. Urban informal settlements and arid/semi-arid counties are hardest hit. Nairobi's water utility serves less than 50% of the city's population.</p>
+        </div>
+        <div class="country-card">
+          <span class="country-flag">🇺🇬</span>
+          <h4>Uganda</h4>
+          <p>21 million lack basic water access. Rural water infrastructure is ageing and underfunded, while Kampala's informal areas mirror Nairobi's pricing inequality.</p>
+        </div>
+        <div class="country-card">
+          <span class="country-flag">🇪🇹</span>
+          <h4>Ethiopia</h4>
+          <p>Home to the largest water-insecure population in East Africa. Climate change is accelerating drought cycles, pushing millions into crisis.</p>
+        </div>
+        <div class="country-card">
+          <span class="country-flag">🇹🇿</span>
+          <h4>Tanzania</h4>
+          <p>24 million lack clean water. Rural communities rely on surface water, while Dar es Salaam's rapid urbanisation outpaces infrastructure development.</p>
+        </div>
+        <div class="country-card">
+          <span class="country-flag">🇸🇴</span>
+          <h4>Somalia</h4>
+          <p>Decades of conflict have devastated water infrastructure. Recurring droughts make Somalia one of the most water-stressed nations on earth.</p>
+        </div>
+        <div class="country-card">
+          <span class="country-flag">🇷🇼</span>
+          <h4>Rwanda</h4>
+          <p>Despite strong governance and investment, 3 million Rwandans still lack safe water. Rural-urban inequality persists in access and quality.</p>
+        </div>
+        <div class="country-card">
+          <span class="country-flag">🇧🇮</span>
+          <h4>Burundi</h4>
+          <p>One of the world's least-developed nations with severe water infrastructure gaps. Only 1 in 4 rural Burundians has access to a basic water source.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Water Efficiency -->
+  <section class="bg-sand">
+    <div class="section-inner">
+      <div class="section-label">The Efficiency Crisis</div>
+      <div class="section-title">Africa's Water Isn't Just Scarce — It's Wasted</div>
+      <div class="section-subtitle">Beyond access, Africa faces a massive water efficiency crisis. From failing rural infrastructure to inefficient agriculture, billions of litres are lost every year.</div>
+
+      <div class="efficiency-stats fade-in">
+        <div class="eff-stat">
+          <span class="eff-value">50%</span>
+          <span class="eff-label">Of rural water points in Sub-Saharan Africa are non-functional within 5 years of installation (RWSN, 2021)</span>
+        </div>
+        <div class="eff-stat">
+          <span class="eff-value">83%</span>
+          <span class="eff-label">Of Africa's cropland is rainfed — only 6% of cultivated land is irrigated, vs. 37% in Asia (FAO AQUASTAT)</span>
+        </div>
+        <div class="eff-stat">
+          <span class="eff-value">40%</span>
+          <span class="eff-label">Of water supplied through urban networks in Africa is lost to leakage and theft (UN-Water/WHO JMP)</span>
+        </div>
+        <div class="eff-stat">
+          <span class="eff-value">$30B</span>
+          <span class="eff-label">Annual economic cost of water insecurity to African economies through lost agricultural output alone (World Bank, 2022)</span>
+        </div>
+      </div>
+
+      <div class="efficiency-grid fade-in">
+        <div class="eff-card">
+          <div class="eff-icon">🚰</div>
+          <h3>Rural Infrastructure Failure</h3>
+          <p>The Rural Water Supply Network reports that 50,000+ rural water points across Sub-Saharan Africa are broken at any given time. The problem isn't just building wells — it's maintaining them. Without local technical capacity and spare parts supply chains, expensive infrastructure becomes scrap within years.</p>
+        </div>
+        <div class="eff-card">
+          <div class="eff-icon">🌾</div>
+          <h3>Agriculture & Irrigation</h3>
+          <p>Africa has 60% of the world's uncultivated arable land, yet uses only 6% of its water for irrigation (FAO). Crop water productivity in Sub-Saharan Africa is 2–4x lower than global averages. With proper irrigation and water management, yields could increase 50–100%, transforming food security and livelihoods.</p>
+        </div>
+        <div class="eff-card">
+          <div class="eff-icon">🏙️</div>
+          <h3>Urban Water Management</h3>
+          <p>Non-revenue water — water lost to leaks, theft, and unbilled use — averages 40% across African cities (IWA). Nairobi loses an estimated 42% of treated water before it reaches customers. This means residents pay more for less, while utilities struggle to fund infrastructure repairs.</p>
+        </div>
+        <div class="eff-card">
+          <div class="eff-icon">🌡️</div>
+          <h3>Water Stress & Climate</h3>
+          <p>The WRI Aqueduct tool classifies 25 African countries as "high" or "extremely high" water stress by 2040. East Africa faces a paradox: abundant rainfall but insufficient capture, storage, and distribution. Climate variability is increasing drought frequency, with the Horn of Africa experiencing its worst drought in 40 years in 2022–2023.</p>
+        </div>
+      </div>
+
+      <div class="efficiency-callout fade-in">
+        <div class="eff-callout-inner">
+          <h3>Water efficiency is the multiplier</h3>
+          <p>Every litre saved through better infrastructure, smarter agriculture, and reduced urban waste is a litre that reaches someone who needs it. MiMaji Foundation combines <a href="/majimap/">data visibility</a> with the <a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji platform's</a> delivery infrastructure to close efficiency gaps — starting in Nairobi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-title">The Crisis Is Urgent.<br>The Solution Is Within Reach.</div>
+    <p>Clean water technology exists. The data is clear. What's needed now is action — from partners, donors, volunteers, and communities working together.</p>
+    <div class="cta-buttons">
+      <a href="/take-action/" class="btn btn-white">Take Action &rarr;</a>
+      <a href="/majimap/" class="btn btn-outline">Explore MajiMap</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .stat-card {
+    background: var(--sand);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border: 1px solid var(--border);
+  }
+
+  .stat-card.large {
+    grid-column: span 1;
+    background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue) 100%);
+    color: var(--white);
+    border: none;
+  }
+
+  .stat-card.large .stat-label {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .stat-value {
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--blue);
+  }
+
+  .stat-card.large .stat-value {
+    color: var(--gold);
+    font-size: 3rem;
+  }
+
+  .stat-label {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    line-height: 1.5;
+  }
+
+  .urban-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .urban-card {
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    transition: all 0.3s;
+  }
+
+  .urban-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(10, 94, 181, 0.1);
+  }
+
+  .urban-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .urban-card h3 {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    color: var(--blue-deep);
+    margin-bottom: 0.6rem;
+  }
+
+  .urban-card p {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+
+  .urban-card a {
+    color: var(--blue);
+    font-weight: 600;
+  }
+
+  .price-callout {
+    margin-top: 3rem;
+  }
+
+  .callout-inner {
+    background: linear-gradient(135deg, var(--blue-deep), var(--blue));
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    color: var(--white);
+  }
+
+  .callout-inner h3 {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .callout-inner p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 550px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.7;
+  }
+
+  .callout-inner a {
+    color: var(--blue);
+  }
+
+  .country-breakdown {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    margin-top: 3rem;
+  }
+
+  .country-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s;
+  }
+
+  .country-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .country-flag {
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+
+  .country-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.3rem;
+  }
+
+  .country-card p {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 900px) {
+    .stat-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .urban-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .country-breakdown {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .stat-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .stat-card.large {
+      grid-column: span 1;
+    }
+  }
+
+  /* Water Efficiency */
+  .efficiency-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .eff-stat {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--white);
+  }
+
+  .eff-value {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    color: var(--blue);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .eff-label {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    line-height: 1.5;
+  }
+
+  .efficiency-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .eff-card {
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    transition: all 0.3s;
+  }
+
+  .eff-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(10, 94, 181, 0.1);
+  }
+
+  .eff-icon {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .eff-card h3 {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    color: var(--blue-deep);
+    margin-bottom: 0.6rem;
+  }
+
+  .eff-card p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+
+  .efficiency-callout {
+    margin-top: 2.5rem;
+  }
+
+  .eff-callout-inner {
+    background: linear-gradient(135deg, var(--teal), var(--blue));
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+    color: var(--white);
+  }
+
+  .eff-callout-inner h3 {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+  }
+
+  .eff-callout-inner p {
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .eff-callout-inner a {
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  @media (max-width: 900px) {
+    .efficiency-stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .efficiency-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .efficiency-stats {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

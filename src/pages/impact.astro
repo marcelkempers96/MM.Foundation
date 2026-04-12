@@ -112,12 +112,89 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  <!-- SDG Alignment -->
+  <section class="bg-sand">
+    <div class="section-inner">
+      <div class="section-label">Global Framework</div>
+      <div class="section-title">Aligned with the Sustainable Development Goals</div>
+      <div class="section-subtitle">Our work directly contributes to 6 of the United Nations Sustainable Development Goals — a framework recognised by every major institutional funder.</div>
+      <div class="sdg-grid fade-in">
+        <div class="sdg-item">
+          <div class="sdg-number">SDG 6</div>
+          <h4>Clean Water & Sanitation</h4>
+          <p>Our core mission — ensuring availability and sustainable management of water for all.</p>
+        </div>
+        <div class="sdg-item">
+          <div class="sdg-number">SDG 3</div>
+          <h4>Good Health & Well-being</h4>
+          <p>Reducing waterborne diseases through quality testing and safe water education.</p>
+        </div>
+        <div class="sdg-item">
+          <div class="sdg-number">SDG 5</div>
+          <h4>Gender Equality</h4>
+          <p>Freeing women and girls from the burden of water collection — time for school and work.</p>
+        </div>
+        <div class="sdg-item">
+          <div class="sdg-number">SDG 10</div>
+          <h4>Reduced Inequalities</h4>
+          <p><a href="/majimap/">MajiMap</a> exposes water pricing inequality, advocating for fair access regardless of income.</p>
+        </div>
+        <div class="sdg-item">
+          <div class="sdg-number">SDG 11</div>
+          <h4>Sustainable Cities</h4>
+          <p>Improving urban water management through the <a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji platform</a> and data-driven advocacy.</p>
+        </div>
+        <div class="sdg-item">
+          <div class="sdg-number">SDG 13</div>
+          <h4>Climate Action</h4>
+          <p>Building water resilience in communities most vulnerable to climate change impacts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Targets Framework -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">2026–2027 Targets</div>
+      <div class="section-title">Our Measurable Goals</div>
+      <div class="section-subtitle">We measure what matters. These targets guide our work and will be updated with actuals as field data comes in.</div>
+      <div class="targets-grid fade-in">
+        <div class="target-card">
+          <div class="target-metric">10,000</div>
+          <div class="target-label">People reached through water testing and education programmes</div>
+          <div class="target-bar"><div class="target-fill" style="width: 30%"></div></div>
+        </div>
+        <div class="target-card">
+          <div class="target-metric">50</div>
+          <div class="target-label">Communities with water quality data mapped on <a href="/majimap/">MajiMap</a></div>
+          <div class="target-bar"><div class="target-fill" style="width: 15%"></div></div>
+        </div>
+        <div class="target-card">
+          <div class="target-metric">50</div>
+          <div class="target-label">Schools participating in <a href="/water-in-schools/">WASH education programme</a></div>
+          <div class="target-bar"><div class="target-fill" style="width: 10%"></div></div>
+        </div>
+        <div class="target-card">
+          <div class="target-metric">3</div>
+          <div class="target-label">Countries with active Foundation operations</div>
+          <div class="target-bar"><div class="target-fill" style="width: 33%"></div></div>
+        </div>
+      </div>
+
+      <div class="download-cta fade-in">
+        <p>Our detailed impact methodology and data collection framework will be published in our first Annual Impact Report.</p>
+        <a href="/resources/" class="btn btn-outline-dark">View Resources &rarr;</a>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="cta-section">
     <div class="section-title">Be Part of the Impact</div>
     <p>Every partnership amplifies our reach. Every contribution accelerates our mission. Join us in making clean water a reality for every community.</p>
     <div class="cta-buttons">
-      <a href="/contact/" class="btn btn-white">Get Involved &rarr;</a>
+      <a href="/take-action/" class="btn btn-white">Take Action &rarr;</a>
       <a href="https://mimaji.co.ke" target="_blank" rel="noopener" class="btn btn-outline">Explore MiMaji Platform</a>
     </div>
   </section>
@@ -166,5 +243,123 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .impact-areas {
       grid-template-columns: 1fr;
     }
+
+    .sdg-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .targets-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sdg-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .sdg-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .sdg-item {
+    padding: 1.5rem;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .sdg-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(10, 94, 181, 0.08);
+  }
+
+  .sdg-number {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--teal);
+    margin-bottom: 0.4rem;
+  }
+
+  .sdg-item h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--blue-deep);
+    margin-bottom: 0.4rem;
+  }
+
+  .sdg-item p {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    line-height: 1.5;
+  }
+
+  .sdg-item a {
+    color: var(--blue);
+    font-weight: 600;
+  }
+
+  .targets-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .target-card {
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--white);
+  }
+
+  .target-metric {
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    color: var(--blue);
+    margin-bottom: 0.3rem;
+  }
+
+  .target-label {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .target-label a {
+    color: var(--blue);
+    font-weight: 600;
+  }
+
+  .target-bar {
+    height: 6px;
+    background: var(--blue-light);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .target-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--teal), var(--blue));
+    border-radius: 3px;
+    transition: width 1s ease;
+  }
+
+  .download-cta {
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  .download-cta p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
   }
 </style>

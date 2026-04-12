@@ -2,11 +2,12 @@
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
-  { href: '/', label: 'Home' },
+  { href: '/the-problem/', label: 'The Crisis' },
   { href: '/about/', label: 'About' },
   { href: '/programs/', label: 'Programs' },
   { href: '/impact/', label: 'Impact' },
-  { href: '/contact/', label: 'Contact' },
+  { href: '/majimap/', label: 'MajiMap' },
+  { href: '/stories/', label: 'Stories' },
 ];
 ---
 
@@ -29,8 +30,8 @@ const navLinks = [
           {link.label}
         </a>
       ))}
-      <a href="https://mimaji.co.ke" target="_blank" rel="noopener" class="nav-cta">
-        Visit MiMaji &rarr;
+      <a href="/take-action/" class="nav-cta">
+        Take Action &rarr;
       </a>
     </div>
   </nav>

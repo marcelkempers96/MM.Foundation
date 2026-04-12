@@ -1,0 +1,169 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Resources"
+  description="Download MiMaji Foundation reports, water quality guides, MajiMap data briefs, and WASH best practice resources. Building knowledge authority on water access in East Africa."
+>
+  <section class="page-hero">
+    <div class="hero-badge">Knowledge Hub</div>
+    <h1>Reports & <em>Resources</em></h1>
+    <p>Download our reports, data briefs, and educational materials. We believe open data and shared knowledge accelerate the path to clean water for all.</p>
+    <svg class="hero-wave" viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,60 C360,100 720,20 1080,60 C1260,80 1380,50 1440,60 L1440,100 L0,100Z" fill="white"/>
+    </svg>
+  </section>
+
+  <!-- Resources Grid -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">Downloads</div>
+      <div class="section-title">Our Publications</div>
+      <div class="section-subtitle">From impact reports to educational guides — these resources reflect our commitment to transparency and knowledge-sharing.</div>
+
+      <div class="resource-grid fade-in">
+        <div class="resource-card featured">
+          <div class="resource-type">Report</div>
+          <h3>Annual Impact Report 2025–2026</h3>
+          <p>Our first annual report covering foundation activities, impact numbers, MajiMap development progress, and strategic roadmap for the coming year.</p>
+          <span class="resource-status">Coming Soon</span>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Guide</div>
+          <h3>Water Quality Education Guide</h3>
+          <p>A comprehensive guide for community health workers and educators on water quality testing, safe storage, and treatment methods.</p>
+          <span class="resource-status">Coming Soon</span>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type data">Data Brief</div>
+          <h3>MajiMap Data Brief: Nairobi Water Prices</h3>
+          <p>Quarterly snapshot of water pricing across Nairobi estates — from the <a href="/majimap/">MajiMap</a> research programme.</p>
+          <span class="resource-status">Coming Soon</span>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Infographic</div>
+          <h3>Nairobi Water Price Map</h3>
+          <p>Visual breakdown of water pricing inequality across Nairobi — showing how the poorest residents pay the most for the worst quality water.</p>
+          <span class="resource-status">Coming Soon</span>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Guide</div>
+          <h3>WASH Best Practices for Communities</h3>
+          <p>Practical guide for community leaders on water, sanitation, and hygiene best practices — tailored for East African contexts.</p>
+          <span class="resource-status">Coming Soon</span>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type media">Media Kit</div>
+          <h3>MiMaji Foundation Media Kit</h3>
+          <p>Logos, brand guidelines, press-ready descriptions, and key statistics for journalists, partners, and media organisations.</p>
+          <span class="resource-status">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-title">Want Early Access to Our Resources?</div>
+    <p>Contact us to be notified when new reports and data briefs are published. We prioritise sharing data with partners and researchers working on water access.</p>
+    <div class="cta-buttons">
+      <a href="/contact/" class="btn btn-white">Contact Us &rarr;</a>
+      <a href="/majimap/" class="btn btn-outline">Explore MajiMap</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .resource-card {
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .resource-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(10, 94, 181, 0.1);
+  }
+
+  .resource-card.featured {
+    grid-column: span 1;
+    border-color: var(--blue);
+    background: var(--blue-light);
+  }
+
+  .resource-type {
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    border-radius: 50px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: var(--blue-light);
+    color: var(--blue);
+    margin-bottom: 1rem;
+    align-self: flex-start;
+  }
+
+  .resource-type.data {
+    background: rgba(26, 158, 143, 0.1);
+    color: var(--teal);
+  }
+
+  .resource-type.media {
+    background: rgba(244, 169, 48, 0.1);
+    color: var(--gold);
+  }
+
+  .resource-card h3 {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--blue-deep);
+    margin-bottom: 0.6rem;
+  }
+
+  .resource-card p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 1rem;
+  }
+
+  .resource-card a:not(.resource-status) {
+    color: var(--blue);
+    font-weight: 600;
+  }
+
+  .resource-status {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-light);
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    background: var(--sand);
+    align-self: flex-start;
+  }
+
+  @media (max-width: 900px) {
+    .resource-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .resource-card.featured {
+      grid-column: span 1;
+    }
+  }
+</style>

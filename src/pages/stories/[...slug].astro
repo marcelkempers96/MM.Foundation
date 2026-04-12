@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const stories = await getCollection('stories');
+  return stories.map(story => ({
+    params: { slug: story.id.replace(/\.md$/, '') },
+    props: { story },
+  }));
+}
+
+const { story } = Astro.props;
+const { Content } = await render(story);
+
+const categoryLabels: Record<string, string> = {
+  impact: 'Impact Story',
+  data: 'Data & Research',
+  community: 'Community',
+  news: 'News',
+  explainer: 'Explainer',
+};
+---
+
+<BaseLayout
+  title={story.data.title}
+  description={story.data.description}
+  ogImage={story.data.image}
+  type="article"
+>
+  <section class="page-hero">
+    <div class="hero-badge">{categoryLabels[story.data.category]}</div>
+    <h1>{story.data.title}</h1>
+    <p>{story.data.description}</p>
+    <svg class="hero-wave" viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,60 C360,100 720,20 1080,60 C1260,80 1380,50 1440,60 L1440,100 L0,100Z" fill="white"/>
+    </svg>
+  </section>
+
+  <article class="article-section">
+    <div class="article-inner">
+      <div class="article-meta">
+        <span class="meta-author">{story.data.author}</span>
+        <span class="meta-sep">&bull;</span>
+        <time datetime={story.data.date.toISOString()}>
+          {story.data.date.toLocaleDateString('en-GB', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+        </time>
+      </div>
+
+      {story.data.image && (
+        <div class="article-hero-image">
+          <img src={story.data.image} alt={story.data.imageAlt || story.data.title} />
+        </div>
+      )}
+
+      <div class="article-content">
+        <Content />
+      </div>
+
+      <div class="article-footer">
+        <a href="/stories/" class="back-link">&larr; All Stories</a>
+        <div class="article-share">
+          <span>Share this story:</span>
+          <a href="/take-action/" class="share-cta">Get Involved &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .article-section {
+    padding: 4rem 2rem;
+  }
+
+  .article-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+  }
+
+  .meta-author {
+    font-weight: 600;
+    color: var(--blue-deep);
+  }
+
+  .article-hero-image {
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+  }
+
+  .article-hero-image img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+
+  .article-content {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text);
+  }
+
+  .article-content :global(h2) {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    color: var(--blue-deep);
+    margin-top: 2.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .article-content :global(h3) {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--blue-deep);
+    margin-top: 2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .article-content :global(p) {
+    margin-bottom: 1.2rem;
+  }
+
+  .article-content :global(a) {
+    color: var(--blue);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .article-content :global(strong) {
+    color: var(--blue-deep);
+    font-weight: 600;
+  }
+
+  .article-content :global(ul),
+  .article-content :global(ol) {
+    margin-bottom: 1.2rem;
+    padding-left: 1.5rem;
+  }
+
+  .article-content :global(li) {
+    margin-bottom: 0.4rem;
+  }
+
+  .article-content :global(hr) {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+
+  .article-content :global(em) {
+    color: var(--text-light);
+  }
+
+  .article-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .back-link {
+    font-size: 0.9rem;
+    color: var(--blue);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .back-link:hover {
+    text-decoration: underline;
+  }
+
+  .article-share {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.85rem;
+    color: var(--text-light);
+  }
+
+  .share-cta {
+    color: var(--blue);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .share-cta:hover {
+    text-decoration: underline;
+  }
+</style>
