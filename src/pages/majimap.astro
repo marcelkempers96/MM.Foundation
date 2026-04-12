@@ -187,6 +187,49 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  <!-- How we collect data -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">How We Collect Data</div>
+      <div class="section-title">Ground Truth from the Estates</div>
+
+      <div class="collect-grid fade-in">
+        <div class="collect-card">
+          <div class="collect-num">01</div>
+          <h4>Estate Price Surveys</h4>
+          <p>Our field team visits Nairobi estates in person to log the real cost of water at kiosks, from boda boda vendors, handcart refills, and informal taps. Every price point is geotagged, timestamped, and traceable.</p>
+        </div>
+        <div class="collect-card">
+          <div class="collect-num">02</div>
+          <h4>Quality Testing</h4>
+          <p>On the same visits we sample water with TDS meters and basic microbiological kits, so price and quality sit on the same map. Safe, caution, or unsafe, per source.</p>
+        </div>
+        <div class="collect-card">
+          <div class="collect-num">03</div>
+          <h4>Community Reports</h4>
+          <p>Residents, boda riders, and vendors can submit their own prices and quality observations. We verify, then publish. The more data, the sharper the picture.</p>
+        </div>
+        <div class="collect-card">
+          <div class="collect-num">04</div>
+          <h4>Open Layers</h4>
+          <p>We also fuse public datasets from OpenStreetMap and the Water Point Data Exchange so the map never starts from zero.</p>
+        </div>
+      </div>
+
+      <div class="support-callout fade-in">
+        <div class="support-inner">
+          <h3>Support our estate surveys</h3>
+          <p>Every estate visit costs real time and real shillings. If you believe Nairobi deserves public, honest water data, <a href="/take-action/">support our work</a> or reach out directly.</p>
+          <p class="support-advice">Running a business, an estate, or a school and want price advice? <a href="https://wa.me/254758434076?text=Hi%20MiMaji%2C%20I%27d%20like%20advice%20on%20water%20pricing." target="_blank" rel="noopener">Talk to us on WhatsApp</a> or <a href="/contact/">get in touch</a>. We share what we learn.</p>
+          <div class="support-buttons">
+            <a href="/take-action/" class="btn btn-primary">Support Our Work &rarr;</a>
+            <a href="https://wa.me/254758434076?text=Hi%20MiMaji%2C%20I%27d%20like%20advice%20on%20water%20pricing." target="_blank" rel="noopener" class="btn btn-outline-dark">Ask for Price Advice</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="cta-section">
     <div class="section-title">Help Us Build MajiMap</div>
@@ -533,10 +576,153 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--blue-deep);
   }
 
+  /* How we collect data */
+  .collect-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .collect-card {
+    padding: 1.8rem 1.5rem;
+    border-radius: 16px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+
+  .collect-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(10, 94, 181, 0.08);
+  }
+
+  .collect-num {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    color: var(--blue);
+    opacity: 0.35;
+    margin-bottom: 0.6rem;
+  }
+
+  .collect-card h4 {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    color: var(--blue-deep);
+    margin-bottom: 0.5rem;
+  }
+
+  .collect-card p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+
+  .support-callout {
+    margin-top: 3rem;
+  }
+
+  .support-inner {
+    background: linear-gradient(135deg, var(--blue-deep), var(--blue));
+    border-radius: 20px;
+    padding: 2.8rem;
+    color: var(--white);
+    text-align: center;
+  }
+
+  .support-inner h3 {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+  }
+
+  .support-inner p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 620px;
+    margin: 0 auto 0.8rem;
+    line-height: 1.7;
+  }
+
+  .support-inner a {
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  .support-advice {
+    margin-bottom: 1.8rem !important;
+  }
+
+  .support-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .support-buttons .btn-outline-dark {
+    background: transparent;
+    color: var(--white);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+  }
+
+  .support-buttons .btn-outline-dark:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.7);
+  }
+
+  @media (max-width: 900px) {
+    .collect-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .collect-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .support-inner {
+      padding: 2rem 1.5rem;
+    }
+  }
+
   :global(.leaflet-control-layers) {
     border-radius: 10px !important;
     font-family: inherit !important;
-    font-size: 0.8rem !important;
+    font-size: 0.78rem !important;
+    width: auto !important;
+  }
+
+  :global(.leaflet-control-layers-expanded) {
+    padding: 8px 12px 8px 10px !important;
+    min-width: 0 !important;
+    width: auto !important;
+  }
+
+  :global(.leaflet-control-layers-expanded label) {
+    display: flex !important;
+    align-items: center;
+    white-space: nowrap;
+    margin: 2px 0 !important;
+    line-height: 1.4 !important;
+  }
+
+  :global(.leaflet-control-layers-expanded label input[type="checkbox"]) {
+    margin-right: 6px !important;
+  }
+
+  /* Water droplet marker */
+  :global(.water-droplet-marker) {
+    background: transparent !important;
+    border: none !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+  }
+
+  :global(.water-droplet-marker svg) {
+    display: block;
   }
 
   @media (max-width: 700px) {
@@ -740,6 +926,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         });
       }
 
+      function dropletIcon(color, size) {
+        var w = size || 26;
+        var h = Math.round(w * 1.28);
+        var svg =
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 32" width="' + w + '" height="' + h + '">' +
+          '<path d="M12 2 C12 2 3.5 14 3.5 20.5 a8.5 8.5 0 0 0 17 0 C20.5 14 12 2 12 2 z" ' +
+          'fill="' + color + '" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round"/>' +
+          '<circle cx="9.5" cy="19.5" r="1.6" fill="rgba(255,255,255,0.55)"/>' +
+          '</svg>';
+        return L.divIcon({
+          className: 'water-droplet-marker',
+          html: svg,
+          iconSize: [w, h],
+          iconAnchor: [w / 2, h],
+          popupAnchor: [0, -h + 4],
+        });
+      }
+
       function colorFor(p) {
         if (p.amenity === 'drinking_water' || p.amenity === 'water_point') return '#2ca58d';
         if (p.man_made === 'water_tap') return '#2ca58d';
@@ -758,12 +962,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       loadOverpass().then(function (gj) {
         L.geoJSON(gj, {
           pointToLayer: function (f, latlng) {
-            return L.circleMarker(latlng, {
-              radius: 5,
-              fillColor: colorFor(f.properties || {}),
-              color: '#fff',
-              weight: 1,
-              fillOpacity: 0.92,
+            return L.marker(latlng, {
+              icon: dropletIcon(colorFor(f.properties || {}), 26),
+              keyboard: false,
             });
           },
           onEachFeature: function (f, l) {
@@ -879,12 +1080,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           var mgmt = pickKey(rec, ['management', '#management']);
           var adm2 = pickKey(rec, ['adm2', '#adm2']);
 
-          var marker = L.circleMarker([lat, lng], {
-            radius: 6,
-            fillColor: wpdxStatusColor(status),
-            color: '#fff',
-            weight: 1.2,
-            fillOpacity: 0.92,
+          var marker = L.marker([lat, lng], {
+            icon: dropletIcon(wpdxStatusColor(status), 28),
+            keyboard: false,
           });
 
           var html =
