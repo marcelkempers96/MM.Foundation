@@ -9,68 +9,72 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="page-hero">
     <div class="hero-badge">Our Story</div>
     <h1>About <em>MiMaji Foundation</em></h1>
-    <p>A non-profit initiative born from the belief that clean water access is a fundamental human right — not a privilege reserved for the few.</p>
+    <p>Clean water is a right, not a privilege. We work to make that real for every household in East Africa.</p>
     <svg class="hero-wave" viewBox="0 0 1440 100" preserveAspectRatio="none">
       <path d="M0,60 C360,100 720,20 1080,60 C1260,80 1380,50 1440,60 L1440,100 L0,100Z" fill="white"/>
     </svg>
   </section>
 
-  <!-- Founder Story -->
+  <!-- Origin -->
   <section>
     <div class="section-inner">
       <div class="section-label">Our Origin</div>
-      <div class="section-title">Why We Started MiMaji Foundation</div>
+      <div class="section-title">Born from a Real Problem</div>
       <div class="origin-image fade-in">
         <img
           src="/nairobi-home-family-4-washing-dishes-by-the-sink-urban-homes.png"
-          alt="A Nairobi family of four washing dishes by the kitchen sink in their urban home — illustrating the everyday water access challenges MiMaji Foundation works to solve in Kenya"
+          alt="A Nairobi family washing dishes at home, illustrating the everyday water challenges MiMaji Foundation works to solve in Kenya"
           loading="lazy"
           width="1200"
           height="600"
         />
       </div>
-      <div class="about-grid fade-in">
-        <div class="about-text">
-          <p>While building <a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji</a> as a water delivery platform in Nairobi, we discovered something troubling: the communities that needed clean water most were paying the highest prices for the worst quality. Residents in informal settlements like Kibera pay up to 10 times more per litre than households in connected, wealthier neighbourhoods.</p>
-          <p>This is a market failure — and a human rights issue. The same technology that powers convenient water delivery for paying customers can be adapted to serve communities who have been overlooked: mapping water quality, educating households, and subsidising access for vulnerable populations.</p>
-          <p>MiMaji Foundation was established in 2025 as the social impact arm of MiMaji. Headquartered in Nairobi, Kenya, the Foundation bridges the gap between commercial innovation and social responsibility. We are currently in our pilot phase — small, focused, and building.</p>
+      <div class="about-text fade-in">
+        <p>While building <a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji</a> as a water delivery platform in Nairobi, we found that the communities that needed clean water most were paying the highest prices for the worst quality. Residents in Kibera pay up to ten times more per litre than households in Karen.</p>
+        <p>MiMaji Foundation was established in 2025 to close this gap: water quality testing, community education, and the <a href="/majimap/">MajiMap</a> data platform that brings transparency to every household.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="bg-sand">
+    <div class="section-inner">
+      <div class="section-label">What Guides Us</div>
+      <div class="section-title">Our Values</div>
+      <div class="about-values fade-in">
+        <div class="value-card">
+          <div class="value-icon">▲</div>
+          <h4>Impact First</h4>
+          <p>Every decision is measured by people who gain access to clean water.</p>
         </div>
-        <div class="about-values">
-          <div class="value-card">
-            <div class="value-icon">🎯</div>
-            <h4>Impact First</h4>
-            <p>Every decision is measured by the number of people who gain access to clean water.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">🤝</div>
-            <h4>Community Partnership</h4>
-            <p>We don't impose solutions — we co-create them with the communities we serve.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">📊</div>
-            <h4>Data-Driven</h4>
-            <p>We use technology and data to identify needs, track progress, and maximise our reach.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">♻️</div>
-            <h4>Sustainability</h4>
-            <p>Our solutions are designed to be maintained and owned by the communities themselves.</p>
-          </div>
+        <div class="value-card">
+          <div class="value-icon">●</div>
+          <h4>Community Partnership</h4>
+          <p>We co-create with the communities we serve, never impose.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">◆</div>
+          <h4>Data-Driven</h4>
+          <p>Real research, real testing, real numbers. No vanity metrics.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">■</div>
+          <h4>Sustainability</h4>
+          <p>Solutions designed to be owned and maintained by communities.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MiMaji Connection -->
-  <section class="bg-sand">
+  <!-- MiMaji Ecosystem -->
+  <section>
     <div class="section-inner">
       <div class="section-label">The MiMaji Ecosystem</div>
-      <div class="section-title">Foundation + Platform = Greater Impact</div>
-      <div class="section-subtitle">The MiMaji Foundation and the MiMaji water delivery platform work hand in hand to create a complete water access ecosystem.</div>
+      <div class="section-title">Foundation + Platform</div>
       <div class="ecosystem-image fade-in">
         <img
           src="/Kinds-of-water-delivery-in-Nairobi-including-link-to-MiMaji.png"
-          alt="The full Nairobi water delivery ecosystem — boda boda riders, NCWSC tankers, handcart vendors, the MiMaji mobile app, and verified MiMaji delivery riders working together to bring clean water to homes"
+          alt="The Nairobi water delivery ecosystem: boda boda riders, NCWSC tankers, handcart vendors, the MiMaji mobile app, and verified MiMaji delivery riders"
           loading="lazy"
           width="1200"
           height="500"
@@ -81,13 +85,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="eco-card">
           <div class="eco-badge">Platform</div>
           <h3><a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji.co.ke</a></h3>
-          <p>Kenya's water delivery technology platform connecting consumers to verified, quality water suppliers. Order water, track delivery, and ensure quality — all from your phone.</p>
+          <p>Kenya's water delivery technology platform connecting customers to verified, quality water suppliers.</p>
           <a href="https://mimaji.co.ke" target="_blank" rel="noopener" class="btn btn-outline-dark" style="margin-top: 1rem;">Visit Platform &rarr;</a>
         </div>
         <div class="eco-card">
           <div class="eco-badge foundation">Foundation</div>
           <h3>MiMaji Foundation</h3>
-          <p>The social impact arm extending clean water access to underserved communities through testing, education, subsidised delivery, and advocacy programs across East Africa.</p>
+          <p>The social impact arm: testing, education, advocacy, and the MajiMap data platform.</p>
           <a href="/programs/" class="btn btn-outline-dark" style="margin-top: 1rem;">Our Programs &rarr;</a>
         </div>
       </div>
@@ -105,7 +109,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="timeline-content">
             <div class="timeline-year">2024</div>
             <h4>MiMaji Platform Launch</h4>
-            <p><a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji.co.ke</a> launched as Kenya&rsquo;s water delivery technology platform. Early research surfaced the depth of urban water pricing inequality across Nairobi.</p>
+            <p><a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji.co.ke</a> launched as Kenya's water delivery technology platform.</p>
           </div>
         </div>
         <div class="timeline-item completed">
@@ -113,23 +117,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="timeline-content">
             <div class="timeline-year">2025</div>
             <h4>Foundation Established</h4>
-            <p>MiMaji Foundation set up as the social impact arm. Nairobi Water Price Map research completed. Initial team and pilot plan in place.</p>
+            <p>MiMaji Foundation set up as the social impact arm. Nairobi Water Price Map research completed.</p>
           </div>
         </div>
         <div class="timeline-item active">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <div class="timeline-year">2026 &mdash; Now</div>
-            <h4>Phase 1 Pilot</h4>
-            <p>Building <a href="/majimap/">MajiMap</a> Phase 1, finalising water testing protocols, designing the <a href="/water-in-schools/">schools programme</a>, and seeking founding partners and grant funding.</p>
+            <div class="timeline-year">2026</div>
+            <h4>Phase 1 Active</h4>
+            <p>Building <a href="/majimap/">MajiMap</a>, water testing protocols, and the <a href="/water-in-schools/">schools programme</a>.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <div class="timeline-year">2027 &amp; Beyond</div>
-            <h4>Scaling Honestly</h4>
-            <p>Once Phase 1 has measurable, verified impact in Nairobi, we expand carefully. Vision: reach across East Africa &mdash; built on proof, not promises.</p>
+            <div class="timeline-year">2027</div>
+            <h4>Regional Expansion</h4>
+            <p>Scaling proven programmes across East Africa.</p>
           </div>
         </div>
       </div>
@@ -139,7 +143,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- CTA -->
   <section class="cta-section">
     <div class="section-title">Join Us in Our Mission</div>
-    <p>Whether as a partner, volunteer, or supporter — there's a place for you at MiMaji Foundation. Together, we can make clean water accessible to every community.</p>
+    <p>Partner, volunteer, or support our work. There's a place for you at MiMaji Foundation.</p>
     <div class="cta-buttons">
       <a href="/take-action/" class="btn btn-white">Take Action &rarr;</a>
       <a href="/programs/" class="btn btn-outline">View Programs</a>
@@ -174,8 +178,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin: 0 0 2.5rem;
   }
 
+  .about-text {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
   .about-text p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--text-light);
     line-height: 1.8;
     margin-bottom: 1.2rem;
@@ -188,8 +197,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .about-values {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.2rem;
+    margin-top: 3rem;
   }
 
   .value-card {
@@ -284,7 +294,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   @media (max-width: 900px) {
-    .about-grid,
     .ecosystem-grid {
       grid-template-columns: 1fr;
     }
