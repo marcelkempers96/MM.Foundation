@@ -1,0 +1,307 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Home"
+  description="MiMaji Foundation is solving the water crisis across East Africa and beyond. We provide clean, safe water access to underserved communities in Kenya, Uganda, Ethiopia, Somalia, Rwanda, Burundi, and Tanzania."
+>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="pulse"></span> Now Active Across East Africa</div>
+      <h1>Clean Water Is a Right,<br>Not a <em>Privilege</em></h1>
+      <p>MiMaji Foundation is building a future where every community in Africa — and the world — has reliable access to safe, affordable water. We start where the need is greatest: East Africa.</p>
+      <div class="hero-buttons">
+        <a href="https://mimaji.co.ke" target="_blank" rel="noopener" class="btn btn-primary">Explore MiMaji Platform &rarr;</a>
+        <a href="/about/" class="btn btn-outline">Our Mission</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="num">7</span><span class="label">Countries</span></div>
+        <div class="hero-stat"><span class="num">400M+</span><span class="label">People Without Safe Water in Africa</span></div>
+        <div class="hero-stat"><span class="num">2025</span><span class="label">Year Founded</span></div>
+      </div>
+    </div>
+    <svg class="hero-wave" viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,60 C360,100 720,20 1080,60 C1260,80 1380,50 1440,60 L1440,100 L0,100Z" fill="white"/>
+    </svg>
+  </section>
+
+  <!-- CRISIS -->
+  <section class="bg-sand" id="crisis">
+    <div class="section-inner">
+      <div class="section-label">The Water Crisis</div>
+      <div class="section-title">Africa Carries the World's Heaviest Water Burden</div>
+      <div class="section-subtitle">While water scarcity is a global challenge, Sub-Saharan Africa faces the deepest and most urgent crisis. These are the facts driving our work.</div>
+      <div class="crisis-grid fade-in">
+        <div class="crisis-visual">
+          <img src="https://images.unsplash.com/photo-1594398901394-4e34b2348fb0?w=800&h=600&fit=crop" alt="Children collecting water in East Africa" loading="lazy" />
+          <div class="overlay">
+            <p>Every day, millions of children walk hours to collect water instead of attending school.</p>
+          </div>
+        </div>
+        <div class="crisis-facts">
+          <div class="crisis-fact">
+            <div class="icon">💧</div>
+            <div>
+              <h4>400 Million People Lack Safe Water</h4>
+              <p>Sub-Saharan Africa is home to the vast majority of the world's water-insecure population. Access rates remain the lowest of any global region.</p>
+            </div>
+          </div>
+          <div class="crisis-fact">
+            <div class="icon">🚶</div>
+            <div>
+              <h4>Women Walk 6+ Hours Daily</h4>
+              <p>In rural East Africa, women and girls bear the burden of water collection — often walking over 6 kilometres each day, sacrificing education and economic opportunity.</p>
+            </div>
+          </div>
+          <div class="crisis-fact">
+            <div class="icon">⚠️</div>
+            <div>
+              <h4>Waterborne Diseases Kill Thousands</h4>
+              <p>Contaminated water causes cholera, typhoid, and diarrheal diseases that disproportionately kill children under 5 across the continent.</p>
+            </div>
+          </div>
+          <div class="crisis-fact">
+            <div class="icon">📉</div>
+            <div>
+              <h4>Economic Growth Held Back</h4>
+              <p>The African Development Bank estimates water insecurity costs African economies billions annually in lost productivity, healthcare costs, and stunted human capital.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section id="mission">
+    <div class="section-inner">
+      <div class="section-label">Our Mission</div>
+      <div class="section-title">Technology-Driven Water Access at Scale</div>
+      <div class="section-subtitle">We combine local community knowledge with modern technology to create sustainable water solutions that last generations.</div>
+      <div class="mission-cards">
+        <div class="mission-card fade-in">
+          <div class="card-icon">🔬</div>
+          <h3>Water Quality Testing</h3>
+          <p>We bring free water quality testing to underserved communities, using TDS meters and bacteriological test kits to identify contamination and educate residents on safe water practices.</p>
+        </div>
+        <div class="mission-card fade-in">
+          <div class="card-icon">🌍</div>
+          <h3>Community Education</h3>
+          <p>Through workshops, schools, and community health workers, we teach safe water storage, treatment, and hygiene — empowering communities to protect their own health.</p>
+        </div>
+        <div class="mission-card fade-in">
+          <div class="card-icon">📱</div>
+          <h3>Platform-Powered Delivery</h3>
+          <p>Backed by the <a href="https://mimaji.co.ke" target="_blank" rel="noopener" style="color: var(--blue); font-weight: 600;">MiMaji technology platform</a>, we connect communities to verified clean water sources and affordable delivery — making safe water accessible on demand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOCUS COUNTRIES -->
+  <section class="focus-section" id="focus">
+    <div class="section-inner">
+      <div class="section-label">Where We Work</div>
+      <div class="section-title">Starting in East Africa, Scaling to the World</div>
+      <div class="section-subtitle">We focus where the need is greatest. East Africa is our launchpad — but our vision is global.</div>
+      <div class="focus-grid">
+        <div class="country-list fade-in">
+          <div class="country-item">
+            <span class="flag">🇰🇪</span>
+            <div class="info"><h4>Kenya</h4><p>Headquarters &bull; Active Operations</p></div>
+          </div>
+          <div class="country-item">
+            <span class="flag">🇺🇬</span>
+            <div class="info"><h4>Uganda</h4><p>Expansion 2026</p></div>
+          </div>
+          <div class="country-item">
+            <span class="flag">🇪🇹</span>
+            <div class="info"><h4>Ethiopia</h4><p>Research &amp; Partnerships</p></div>
+          </div>
+          <div class="country-item">
+            <span class="flag">🇸🇴</span>
+            <div class="info"><h4>Somalia</h4><p>Humanitarian Corridor</p></div>
+          </div>
+          <div class="country-item">
+            <span class="flag">🇷🇼</span>
+            <div class="info"><h4>Rwanda</h4><p>Pilot Planning</p></div>
+          </div>
+          <div class="country-item">
+            <span class="flag">🇧🇮</span>
+            <div class="info"><h4>Burundi</h4><p>Needs Assessment</p></div>
+          </div>
+          <div class="country-item">
+            <span class="flag">🇹🇿</span>
+            <div class="info"><h4>Tanzania</h4><p>Community Outreach</p></div>
+          </div>
+        </div>
+        <div class="focus-map fade-in">
+          <div class="map-placeholder">
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="map-text">
+              <span class="big">7</span>
+              <span class="sub">Countries across East Africa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section class="bg-sand" id="impact">
+    <div class="section-inner">
+      <div class="section-label">Our Impact</div>
+      <div class="section-title">Building Momentum, Changing Lives</div>
+      <div class="section-subtitle">Every number represents a life improved, a community empowered, a step closer to solving the water crisis.</div>
+      <div class="impact-numbers fade-in">
+        <div class="impact-num"><span class="value">10K+</span><span class="unit">People Reached</span></div>
+        <div class="impact-num"><span class="value">30+</span><span class="unit">Communities Served</span></div>
+        <div class="impact-num"><span class="value">7</span><span class="unit">Countries Targeted</span></div>
+        <div class="impact-num"><span class="value">100%</span><span class="unit">Commitment to Impact</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-title">The Water Crisis Won't Solve Itself.<br>But Together, We Can.</div>
+    <p>Whether you're a partner, donor, volunteer, or community leader — there's a role for you in the MiMaji mission. Let's build a future where clean water is a given, not a luxury.</p>
+    <div class="cta-buttons">
+      <a href="https://mimaji.co.ke" target="_blank" rel="noopener" class="btn btn-white">Visit MiMaji Platform &rarr;</a>
+      <a href="/contact/" class="btn btn-outline">Get In Touch</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(165deg, var(--blue-deep) 0%, var(--blue) 40%, var(--sky) 100%);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .hero-wave {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 880px;
+    padding: 2rem;
+    animation: fadeUp 1s ease;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.45rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.8rem;
+    letter-spacing: 0.04em;
+  }
+
+  .pulse {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.6rem, 6vw, 4.5rem);
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 620px;
+    margin: 0 auto 2.4rem;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    margin-top: 3.5rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-stat {
+    text-align: center;
+  }
+
+  .hero-stat .num {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    color: var(--white);
+    display: block;
+  }
+
+  .hero-stat .label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 0.2rem;
+  }
+
+  @media (max-width: 900px) {
+    .hero-stats {
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+  }
+</style>

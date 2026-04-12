@@ -1,0 +1,195 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about/', label: 'About' },
+  { href: '/programs/', label: 'Programs' },
+  { href: '/impact/', label: 'Impact' },
+  { href: '/contact/', label: 'Contact' },
+];
+---
+
+<header class="site-header" id="nav">
+  <nav class="nav-container">
+    <a href="/" class="nav-logo">
+      <span class="dot"></span> MiMaji Foundation
+    </a>
+
+    <button class="mobile-menu" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-links">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class:list={['nav-link', { active: currentPath === link.href }]}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a href="https://mimaji.co.ke" target="_blank" rel="noopener" class="nav-cta">
+        Visit MiMaji &rarr;
+      </a>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 1.2rem 2.5rem;
+    transition: all 0.4s;
+  }
+
+  .site-header.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .nav-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    color: var(--white);
+    transition: color 0.4s;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: inline-block;
+  }
+
+  .site-header.scrolled .nav-logo {
+    color: var(--blue-deep);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    transition: color 0.3s;
+    text-decoration: none;
+  }
+
+  .site-header.scrolled .nav-link {
+    color: var(--text);
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--gold);
+  }
+
+  .nav-cta {
+    background: var(--gold) !important;
+    color: var(--dark) !important;
+    padding: 0.55rem 1.4rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.82rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(244, 169, 48, 0.4);
+  }
+
+  .mobile-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .mobile-menu span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    margin: 5px 0;
+    transition: background 0.3s;
+  }
+
+  .site-header.scrolled .mobile-menu span {
+    background: var(--dark);
+  }
+
+  @media (max-width: 900px) {
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background: #fff;
+      padding: 1.5rem;
+      gap: 0.5rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.show {
+      display: flex;
+    }
+
+    .nav-links .nav-link {
+      color: var(--text);
+      padding: 0.5rem 0;
+    }
+
+    .mobile-menu {
+      display: block;
+    }
+
+    .site-header {
+      padding: 1rem 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav?.classList.toggle('scrolled', window.scrollY > 50);
+  });
+  // Set initial state
+  if (window.scrollY > 50) nav?.classList.add('scrolled');
+
+  const toggle = document.querySelector('.mobile-menu');
+  const links = document.querySelector('.nav-links');
+  toggle?.addEventListener('click', () => {
+    const isOpen = links?.classList.toggle('show');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+</script>

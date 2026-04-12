@@ -1,0 +1,200 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Programs"
+  description="Explore MiMaji Foundation's programs: water quality testing, community WASH education, platform-powered delivery, and water rights advocacy across East Africa."
+>
+  <section class="page-hero">
+    <div class="hero-badge">What We Do</div>
+    <h1>Our <em>Programs</em></h1>
+    <p>From urban Nairobi to rural East Africa, our programs address the full spectrum of the water crisis through testing, education, technology, and advocacy.</p>
+    <svg class="hero-wave" viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,60 C360,100 720,20 1080,60 C1260,80 1380,50 1440,60 L1440,100 L0,100Z" fill="white"/>
+    </svg>
+  </section>
+
+  <!-- Programs Grid -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">Active Programs</div>
+      <div class="section-title">How We Create Lasting Change</div>
+      <div class="section-subtitle">Each program is designed for measurable impact, community ownership, and long-term sustainability.</div>
+      <div class="programs-grid fade-in">
+        <div class="program">
+          <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?w=700&h=450&fit=crop" alt="Community water testing program" loading="lazy" />
+          <div class="content">
+            <span class="tag">WATER QUALITY</span>
+            <h3>Maji Safi Testing Initiative</h3>
+            <p>Free water quality testing events across Nairobi estates and East African communities, creating public water safety maps.</p>
+          </div>
+        </div>
+        <div class="program">
+          <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=700&h=450&fit=crop" alt="Community education program" loading="lazy" />
+          <div class="content">
+            <span class="tag">EDUCATION</span>
+            <h3>Community WASH Workshops</h3>
+            <p>Water, sanitation, and hygiene training for schools, women's groups, and community health volunteers across the region.</p>
+          </div>
+        </div>
+        <div class="program">
+          <img src="https://images.unsplash.com/photo-1597392003675-a0e75e0fb9b7?w=700&h=450&fit=crop" alt="Water delivery platform" loading="lazy" />
+          <div class="content">
+            <span class="tag">TECHNOLOGY</span>
+            <h3>MiMaji Platform Access</h3>
+            <p>Leveraging the <a href="https://mimaji.co.ke" target="_blank" rel="noopener" style="color: var(--gold);">MiMaji delivery platform</a> to subsidise clean water delivery to the most vulnerable urban communities.</p>
+          </div>
+        </div>
+        <div class="program">
+          <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=700&h=450&fit=crop" alt="Clean water advocacy" loading="lazy" />
+          <div class="content">
+            <span class="tag">ADVOCACY</span>
+            <h3>Water Rights &amp; Policy</h3>
+            <p>Partnering with governments and institutions to advocate for water equity, transparency in water pricing, and infrastructure investment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Details -->
+  <section class="bg-sand">
+    <div class="section-inner">
+      <div class="section-label">Program Details</div>
+      <div class="section-title">Deep Dive Into Our Work</div>
+      <div class="details-grid fade-in">
+        <div class="detail-card">
+          <div class="detail-num">01</div>
+          <h3>Maji Safi Testing Initiative</h3>
+          <p>Our flagship program deploys trained testers with TDS meters and bacteriological test kits to communities across Kenya. We test borehole water, municipal supply, and vendor water — then share results publicly to build a national water quality map.</p>
+          <ul>
+            <li>Free door-to-door water quality testing</li>
+            <li>Real-time results shared with households</li>
+            <li>Data feeds into the <a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji platform</a> water quality database</li>
+            <li>Community water safety reports published quarterly</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <div class="detail-num">02</div>
+          <h3>Community WASH Workshops</h3>
+          <p>We partner with schools, women's groups, and community health volunteers to deliver Water, Sanitation, and Hygiene (WASH) training adapted for local contexts and languages.</p>
+          <ul>
+            <li>Age-appropriate water education for schools</li>
+            <li>Household water treatment and safe storage training</li>
+            <li>Hygiene promotion and handwashing campaigns</li>
+            <li>Training community health workers as water champions</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <div class="detail-num">03</div>
+          <h3>Platform-Powered Delivery</h3>
+          <p>Using the <a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji technology platform</a>, we connect underserved communities to verified clean water sources and subsidise delivery costs for those who need it most.</p>
+          <ul>
+            <li>Subsidised water delivery for vulnerable households</li>
+            <li>Verified water quality from tested sources</li>
+            <li>Technology-enabled tracking and transparency</li>
+            <li>Sustainable model backed by platform revenue</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <div class="detail-num">04</div>
+          <h3>Water Rights &amp; Policy</h3>
+          <p>We advocate at county and national level for policies that protect water rights, ensure pricing transparency, and prioritise infrastructure investment in underserved areas.</p>
+          <ul>
+            <li>Policy research and white papers</li>
+            <li>Government and stakeholder engagement</li>
+            <li>Water pricing transparency campaigns</li>
+            <li>Infrastructure investment advocacy</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-title">Want to Support Our Programs?</div>
+    <p>Every partnership, donation, and volunteer hour brings us closer to solving the water crisis. Reach out to learn how you can make a difference.</p>
+    <div class="cta-buttons">
+      <a href="/contact/" class="btn btn-white">Partner With Us &rarr;</a>
+      <a href="https://mimaji.co.ke" target="_blank" rel="noopener" class="btn btn-outline">Visit MiMaji Platform</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .detail-card {
+    padding: 2.2rem;
+    border-radius: 16px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+
+  .detail-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(10, 94, 181, 0.1);
+  }
+
+  .detail-num {
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: var(--blue);
+    opacity: 0.3;
+    margin-bottom: 0.5rem;
+  }
+
+  .detail-card h3 {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--blue-deep);
+    margin-bottom: 0.8rem;
+  }
+
+  .detail-card p {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .detail-card a {
+    color: var(--blue);
+    font-weight: 600;
+  }
+
+  .detail-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .detail-card ul li {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    padding: 0.35rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+
+  .detail-card ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-weight: 600;
+  }
+
+  @media (max-width: 900px) {
+    .details-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

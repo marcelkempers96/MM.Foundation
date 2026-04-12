@@ -1,0 +1,82 @@
+---
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  type?: string;
+}
+
+const { title, description, ogImage, type } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <SEO title={title} description={description} ogImage={ogImage} type={type} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "NGO",
+      "name": "MiMaji Foundation",
+      "url": "https://mimaji.org",
+      "description": "MiMaji Foundation works to solve the water crisis across East Africa and the world by providing clean, safe water access to underserved communities.",
+      "foundingDate": "2025",
+      "founder": {
+        "@type": "Person",
+        "name": "Marcel"
+      },
+      "areaServed": [
+        {"@type": "Country", "name": "Kenya"},
+        {"@type": "Country", "name": "Uganda"},
+        {"@type": "Country", "name": "Ethiopia"},
+        {"@type": "Country", "name": "Somalia"},
+        {"@type": "Country", "name": "Rwanda"},
+        {"@type": "Country", "name": "Burundi"},
+        {"@type": "Country", "name": "Tanzania"}
+      ],
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "MiMaji",
+        "url": "https://www.mimaji.co.ke"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "foundation@mimaji.org",
+        "contactType": "General"
+      }
+    })} />
+
+    <!-- Fade-in observer -->
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+  </body>
+</html>

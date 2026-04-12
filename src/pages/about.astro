@@ -1,0 +1,222 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About"
+  description="Learn about MiMaji Foundation's mission to provide clean, safe water access to communities across East Africa. Founded in 2025, we combine technology and community partnerships."
+>
+  <section class="page-hero">
+    <div class="hero-badge">Our Story</div>
+    <h1>About <em>MiMaji Foundation</em></h1>
+    <p>A non-profit initiative born from the belief that clean water access is a fundamental human right — not a privilege reserved for the few.</p>
+    <svg class="hero-wave" viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,60 C360,100 720,20 1080,60 C1260,80 1380,50 1440,60 L1440,100 L0,100Z" fill="white"/>
+    </svg>
+  </section>
+
+  <!-- Origin Story -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">Our Origin</div>
+      <div class="section-title">Born from the MiMaji Platform</div>
+      <div class="about-grid fade-in">
+        <div class="about-text">
+          <p>MiMaji Foundation was established in 2025 as the social impact arm of <a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji</a> — Kenya's leading water delivery technology platform. While MiMaji the business connects urban consumers to quality water delivery, the Foundation extends this mission to those who need it most.</p>
+          <p>We saw that the same technology powering convenient water delivery in Nairobi could be adapted to serve underserved communities — mapping water quality, educating households, and subsidising access for vulnerable populations.</p>
+          <p>Headquartered in Nairobi, Kenya, and operating as a Reef Support B.V. initiative, MiMaji Foundation bridges the gap between commercial innovation and social responsibility.</p>
+        </div>
+        <div class="about-values">
+          <div class="value-card">
+            <div class="value-icon">🎯</div>
+            <h4>Impact First</h4>
+            <p>Every decision is measured by the number of people who gain access to clean water.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🤝</div>
+            <h4>Community Partnership</h4>
+            <p>We don't impose solutions — we co-create them with the communities we serve.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">📊</div>
+            <h4>Data-Driven</h4>
+            <p>We use technology and data to identify needs, track progress, and maximise our reach.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">♻️</div>
+            <h4>Sustainability</h4>
+            <p>Our solutions are designed to be maintained and owned by the communities themselves.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MiMaji Connection -->
+  <section class="bg-sand">
+    <div class="section-inner">
+      <div class="section-label">The MiMaji Ecosystem</div>
+      <div class="section-title">Foundation + Platform = Greater Impact</div>
+      <div class="section-subtitle">The MiMaji Foundation and the MiMaji water delivery platform work hand in hand to create a complete water access ecosystem.</div>
+      <div class="ecosystem-grid fade-in">
+        <div class="eco-card">
+          <div class="eco-badge">Platform</div>
+          <h3><a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji.co.ke</a></h3>
+          <p>Kenya's water delivery technology platform connecting consumers to verified, quality water suppliers. Order water, track delivery, and ensure quality — all from your phone.</p>
+          <a href="https://mimaji.co.ke" target="_blank" rel="noopener" class="btn btn-outline-dark" style="margin-top: 1rem;">Visit Platform &rarr;</a>
+        </div>
+        <div class="eco-card">
+          <div class="eco-badge foundation">Foundation</div>
+          <h3>MiMaji Foundation</h3>
+          <p>The social impact arm extending clean water access to underserved communities through testing, education, subsidised delivery, and advocacy programs across East Africa.</p>
+          <a href="/programs/" class="btn btn-outline-dark" style="margin-top: 1rem;">Our Programs &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-title">Join Us in Our Mission</div>
+    <p>Whether as a partner, volunteer, or supporter — there's a place for you at MiMaji Foundation. Together, we can make clean water accessible to every community.</p>
+    <div class="cta-buttons">
+      <a href="/contact/" class="btn btn-white">Get In Touch &rarr;</a>
+      <a href="/programs/" class="btn btn-outline">View Programs</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+  }
+
+  .about-text a {
+    color: var(--blue);
+    font-weight: 600;
+  }
+
+  .about-values {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+
+  .value-card {
+    padding: 1.5rem;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    transition: all 0.3s;
+  }
+
+  .value-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(10, 94, 181, 0.08);
+  }
+
+  .value-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .value-card h4 {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--blue-deep);
+    margin-bottom: 0.4rem;
+  }
+
+  .value-card p {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+
+  .ecosystem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .eco-card {
+    padding: 2.5rem;
+    border-radius: 16px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+
+  .eco-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(10, 94, 181, 0.1);
+  }
+
+  .eco-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: var(--blue-light);
+    color: var(--blue);
+    margin-bottom: 1rem;
+  }
+
+  .eco-badge.foundation {
+    background: rgba(26, 158, 143, 0.1);
+    color: var(--teal);
+  }
+
+  .eco-card h3 {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    color: var(--blue-deep);
+    margin-bottom: 0.8rem;
+  }
+
+  .eco-card h3 a {
+    color: var(--blue-deep);
+    text-decoration: none;
+  }
+
+  .eco-card h3 a:hover {
+    color: var(--blue);
+  }
+
+  .eco-card p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 900px) {
+    .about-grid,
+    .ecosystem-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-values {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .about-values {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

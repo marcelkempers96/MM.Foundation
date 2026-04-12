@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Impact"
+  description="See MiMaji Foundation's impact across East Africa — communities served, people reached, and countries where we're creating lasting change in water access."
+>
+  <section class="page-hero">
+    <div class="hero-badge">Our Results</div>
+    <h1>Our <em>Impact</em></h1>
+    <p>Every number represents a life improved, a community empowered, a step closer to solving the water crisis across East Africa.</p>
+    <svg class="hero-wave" viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,60 C360,100 720,20 1080,60 C1260,80 1380,50 1440,60 L1440,100 L0,100Z" fill="white"/>
+    </svg>
+  </section>
+
+  <!-- Impact Numbers -->
+  <section class="bg-sand">
+    <div class="section-inner">
+      <div class="section-label">By The Numbers</div>
+      <div class="section-title">Building Momentum, Changing Lives</div>
+      <div class="impact-numbers fade-in">
+        <div class="impact-num"><span class="value">10K+</span><span class="unit">People Reached</span></div>
+        <div class="impact-num"><span class="value">30+</span><span class="unit">Communities Served</span></div>
+        <div class="impact-num"><span class="value">7</span><span class="unit">Countries Targeted</span></div>
+        <div class="impact-num"><span class="value">100%</span><span class="unit">Commitment to Impact</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Focus Countries -->
+  <section class="focus-section">
+    <div class="section-inner">
+      <div class="section-label">Where We Work</div>
+      <div class="section-title">Impact Across East Africa</div>
+      <div class="section-subtitle">Our operations span 7 countries, each with unique water challenges and solutions.</div>
+      <div class="focus-grid">
+        <div class="country-list fade-in">
+          <div class="country-item">
+            <span class="flag">🇰🇪</span>
+            <div class="info"><h4>Kenya</h4><p>Headquarters &bull; Active Operations</p></div>
+          </div>
+          <div class="country-item">
+            <span class="flag">🇺🇬</span>
+            <div class="info"><h4>Uganda</h4><p>Expansion 2026</p></div>
+          </div>
+          <div class="country-item">
+            <span class="flag">🇪🇹</span>
+            <div class="info"><h4>Ethiopia</h4><p>Research &amp; Partnerships</p></div>
+          </div>
+          <div class="country-item">
+            <span class="flag">🇸🇴</span>
+            <div class="info"><h4>Somalia</h4><p>Humanitarian Corridor</p></div>
+          </div>
+          <div class="country-item">
+            <span class="flag">🇷🇼</span>
+            <div class="info"><h4>Rwanda</h4><p>Pilot Planning</p></div>
+          </div>
+          <div class="country-item">
+            <span class="flag">🇧🇮</span>
+            <div class="info"><h4>Burundi</h4><p>Needs Assessment</p></div>
+          </div>
+          <div class="country-item">
+            <span class="flag">🇹🇿</span>
+            <div class="info"><h4>Tanzania</h4><p>Community Outreach</p></div>
+          </div>
+        </div>
+        <div class="focus-map fade-in">
+          <div class="map-placeholder">
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="map-text">
+              <span class="big">7</span>
+              <span class="sub">Countries across East Africa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Stories -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">Impact Areas</div>
+      <div class="section-title">Where Clean Water Changes Everything</div>
+      <div class="section-subtitle">Access to clean water creates a ripple effect that transforms entire communities.</div>
+      <div class="impact-areas fade-in">
+        <div class="impact-area">
+          <div class="area-icon">🏥</div>
+          <h3>Health</h3>
+          <p>Reducing waterborne diseases like cholera, typhoid, and diarrhea — especially among children under 5 who are most vulnerable to contaminated water sources.</p>
+        </div>
+        <div class="impact-area">
+          <div class="area-icon">📚</div>
+          <h3>Education</h3>
+          <p>When children don't have to walk hours for water, they attend school. Clean water access directly increases school attendance and academic performance, especially for girls.</p>
+        </div>
+        <div class="impact-area">
+          <div class="area-icon">💼</div>
+          <h3>Economic Growth</h3>
+          <p>Clean water frees up productive hours, reduces healthcare costs, and enables small businesses. The economic multiplier of water access is estimated at 4x return on investment.</p>
+        </div>
+        <div class="impact-area">
+          <div class="area-icon">👩</div>
+          <h3>Gender Equality</h3>
+          <p>Women and girls bear the disproportionate burden of water collection. Access to clean water returns hours to their day — time for education, work, and community leadership.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-title">Be Part of the Impact</div>
+    <p>Every partnership amplifies our reach. Every contribution accelerates our mission. Join us in making clean water a reality for every community.</p>
+    <div class="cta-buttons">
+      <a href="/contact/" class="btn btn-white">Get Involved &rarr;</a>
+      <a href="https://mimaji.co.ke" target="_blank" rel="noopener" class="btn btn-outline">Explore MiMaji Platform</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .impact-areas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .impact-area {
+    padding: 2.2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    transition: all 0.3s;
+  }
+
+  .impact-area:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(10, 94, 181, 0.1);
+  }
+
+  .area-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .impact-area h3 {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--blue-deep);
+    margin-bottom: 0.6rem;
+  }
+
+  .impact-area p {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 900px) {
+    .impact-areas {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
