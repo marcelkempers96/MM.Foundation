@@ -32,8 +32,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             src="/mimaji-water-bottle-with-qr-code-label.png"
             alt="MiMaji 20L water bottle with QR code label and serial number for water source verification"
             loading="lazy"
-            width="400"
-            height="600"
+            width="1024"
+            height="1536"
           />
         </div>
       </div>
@@ -52,8 +52,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             src="/qr-code-how-it-works.png"
             alt="Step by step illustration of how the MiMaji Know Your Water QR code system works"
             loading="lazy"
-            width="800"
-            height="500"
+            width="887"
+            height="444"
           />
         </div>
         <div class="how-steps">
@@ -139,8 +139,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             src="/qr-code-app-information.png"
             alt="MiMaji Know Your Water app screen showing water source, treatment, and quality information after a QR code scan"
             loading="lazy"
-            width="500"
-            height="700"
+            width="614"
+            height="410"
           />
         </div>
       </div>
@@ -158,8 +158,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           src="/qr-code-before-after-impact.png"
           alt="Before and after impact of using the MiMaji Know Your Water QR code tool, from unknown water sources to verified transparent quality"
           loading="lazy"
-          width="1000"
-          height="600"
+          width="614"
+          height="410"
         />
       </div>
 
@@ -268,6 +268,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(10, 94, 181, 0.18);
     max-width: 100%;
+    max-height: 600px;
+    width: auto;
     height: auto;
   }
 
@@ -281,7 +283,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .how-image img {
+    max-width: 100%;
     width: 100%;
+    height: auto;
     border-radius: 16px;
     box-shadow: 0 12px 40px rgba(10, 94, 181, 0.12);
   }
@@ -328,16 +332,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   /* Info features */
   .info-grid {
     display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 4rem;
-    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 3rem;
     margin-top: 3rem;
   }
 
   .info-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 2.5rem;
   }
 
   .info-feature {
@@ -378,8 +381,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-weight: 600;
   }
 
+  .info-image {
+    text-align: center;
+  }
+
   .info-image img {
+    max-width: 100%;
     width: 100%;
+    max-width: 720px;
+    height: auto;
     border-radius: 16px;
     box-shadow: 0 12px 40px rgba(10, 94, 181, 0.12);
   }
@@ -391,8 +401,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .impact-image img {
+    max-width: 100%;
     width: 100%;
-    max-width: 1000px;
+    max-width: 900px;
+    height: auto;
     border-radius: 16px;
     box-shadow: 0 12px 40px rgba(10, 94, 181, 0.12);
   }
@@ -518,14 +530,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   @media (max-width: 900px) {
     .bottle-grid,
-    .how-grid,
-    .info-grid {
+    .how-grid {
       grid-template-columns: 1fr;
       gap: 2.5rem;
     }
 
+    .info-content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     .ba-grid,
     .why-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .info-content {
       grid-template-columns: 1fr;
     }
   }

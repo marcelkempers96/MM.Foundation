@@ -27,22 +27,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </svg>
   </section>
 
-  <!-- BANNER: Water delivery ecosystem -->
-  <section class="banner-section">
-    <div class="banner-image">
-      <img
-        src="/Kinds-of-water-delivery-in-Nairobi-including-link-to-MiMaji.png"
-        alt="The Nairobi water delivery ecosystem: boda boda riders, NCWSC tankers, handcart vendors, the MiMaji mobile app, and verified MiMaji delivery riders working together to bring clean water to homes"
-        loading="eager"
-        width="1920"
-        height="800"
-      />
-    </div>
-    <div class="banner-caption">
-      <p>From informal vendors to verified delivery: the Nairobi water landscape.</p>
-    </div>
-  </section>
-
   <!-- CRISIS -->
   <section class="bg-sand" id="crisis">
     <div class="section-inner">
@@ -124,41 +108,45 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="section-title">What We're Building Now</div>
       <div class="stage-grid fade-in">
         <div class="stage-card">
-          <div class="stage-tag">Now</div>
-          <h4>Phase 1 Pilot</h4>
-          <p>Water testing protocols and community events in Nairobi.</p>
+          <div class="stage-image">
+            <img src="/water-testing-kit.png" alt="MiMaji Foundation water quality testing kit used in Nairobi pilot community testing events" loading="lazy" width="1024" height="1536" />
+          </div>
+          <div class="stage-body">
+            <div class="stage-tag">Now</div>
+            <h4>Phase 1 Pilot</h4>
+            <p>Water testing protocols and community events in Nairobi.</p>
+          </div>
         </div>
         <div class="stage-card">
-          <div class="stage-tag">Next</div>
-          <h4>MajiMap Launch</h4>
-          <p>Public, interactive Nairobi water price and quality map.</p>
+          <div class="stage-image">
+            <img src="/MiMaji-research-kilimani-water.png" alt="MiMaji Foundation MajiMap research data from Kilimani, Nairobi water pricing study" loading="lazy" width="307" height="461" />
+          </div>
+          <div class="stage-body">
+            <div class="stage-tag">Next</div>
+            <h4>MajiMap Launch</h4>
+            <p>Public, interactive Nairobi water price and quality map.</p>
+          </div>
         </div>
         <div class="stage-card">
-          <div class="stage-tag">Soon</div>
-          <h4>Schools Programme</h4>
-          <p>Testing, ambassador training, and WASH education in Nairobi schools.</p>
+          <div class="stage-image">
+            <img src="/education-outreach-water-access.png" alt="MiMaji Foundation community water education outreach session in a Nairobi neighbourhood" loading="lazy" width="410" height="614" />
+          </div>
+          <div class="stage-body">
+            <div class="stage-tag">Soon</div>
+            <h4>Schools Programme</h4>
+            <p>Testing, ambassador training, and WASH education in Nairobi schools.</p>
+          </div>
         </div>
         <div class="stage-card">
-          <div class="stage-tag">Vision</div>
-          <h4>Regional Reach</h4>
-          <p>Scaling proven programmes across East Africa.</p>
+          <div class="stage-image">
+            <img src="/modern-kenya-waterrefinery.png" alt="A modern Kenyan water refinery and treatment facility representing regional scaling vision for MiMaji Foundation" loading="lazy" width="1536" height="1024" />
+          </div>
+          <div class="stage-body">
+            <div class="stage-tag">Vision</div>
+            <h4>Regional Reach</h4>
+            <p>Scaling proven programmes across East Africa.</p>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Emotional close: clean water is a right -->
-  <section class="emotional-banner">
-    <div class="emotional-image">
-      <img
-        src="/close-up-shot-young-child-drinking-water.png"
-        alt="A young Kenyan child drinking clean water from a glass, the next generation MiMaji Foundation works to protect"
-        loading="lazy"
-        width="1920"
-        height="900"
-      />
-      <div class="emotional-overlay">
-        <p class="emotional-quote">Clean water is the beginning of everything.</p>
       </div>
     </div>
   </section>
@@ -294,111 +282,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-top: 3rem;
   }
 
-  /* Banner: Water delivery ecosystem */
-  .banner-section {
-    background: var(--white);
-    padding: 0;
-    margin: 0;
-  }
-
-  .banner-image {
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-  }
-
-  .banner-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .banner-caption {
-    background: var(--blue-deep);
-    color: var(--white);
-    padding: 1.2rem 2rem;
-    text-align: center;
-  }
-
-  .banner-caption p {
-    font-family: var(--serif);
-    font-size: 1.15rem;
-    font-style: italic;
-    color: var(--white);
-    margin: 0;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* Emotional banner: child drinking water */
-  .emotional-banner {
-    padding: 0;
-    margin: 0;
-    background: var(--dark);
-  }
-
-  .emotional-image {
-    position: relative;
-    width: 100%;
-    max-height: 600px;
-    overflow: hidden;
-    line-height: 0;
-  }
-
-  .emotional-image img {
-    width: 100%;
-    height: auto;
-    max-height: 600px;
-    object-fit: cover;
-    object-position: center 30%;
-    display: block;
-  }
-
-  .emotional-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(6, 46, 90, 0.1) 0%,
-      rgba(6, 46, 90, 0.3) 60%,
-      rgba(6, 46, 90, 0.75) 100%
-    );
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding: 3rem 2rem;
-  }
-
-  .emotional-quote {
-    font-family: var(--serif);
-    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
-    font-style: italic;
-    color: var(--white);
-    text-align: center;
-    max-width: 800px;
-    line-height: 1.3;
-    margin: 0;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
-  }
-
-  @media (max-width: 768px) {
-    .banner-caption {
-      padding: 1rem 1.5rem;
-    }
-
-    .banner-caption p {
-      font-size: 1rem;
-    }
-
-    .emotional-image img {
-      max-height: 400px;
-    }
-
-    .emotional-overlay {
-      padding: 2rem 1.5rem;
-    }
-  }
 
   /* Stage cards */
   .stage-grid {
@@ -409,16 +292,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .stage-card {
-    padding: 1.8rem 1.5rem;
     border-radius: 16px;
     background: var(--white);
     border: 1px solid var(--border);
     transition: all 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
 
   .stage-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 40px rgba(10, 94, 181, 0.08);
+  }
+
+  .stage-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--sand);
+  }
+
+  .stage-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .stage-body {
+    padding: 1.6rem 1.4rem;
+    flex-grow: 1;
   }
 
   .stage-tag {
@@ -431,7 +335,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     padding: 0.25rem 0.7rem;
     border-radius: 50px;
     background: rgba(244, 169, 48, 0.1);
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
   }
 
   .stage-card h4 {
