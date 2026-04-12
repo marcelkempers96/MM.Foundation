@@ -63,17 +63,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="section-label">The Concept</div>
       <div class="section-title">Making Water Inequality Visible</div>
 
-      <div class="research-image fade-in">
-        <img
-          src="/MiMaji-research-kilimani-water.png"
-          alt="MiMaji Foundation field research data on water pricing and quality in Kilimani, Nairobi"
-          loading="lazy"
-          width="1200"
-          height="600"
-        />
-        <p class="image-caption">Field research from Kilimani, Nairobi. The data foundation behind MajiMap.</p>
-      </div>
-
       <div class="concept-callout fade-in">
         <h3>"Why does water cost 10x more in Kibera than in Karen?"</h3>
         <p>MajiMap answers this question with data. Our flagship public water transparency tool.</p>
@@ -131,15 +120,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- Why It Matters -->
   <section class="bg-sand">
     <div class="section-inner">
-      <div class="vendor-image fade-in">
-        <img
-          src="/water-shop-kenya.png"
-          alt="An informal water shop in Kenya, the kind of small unregulated vendor whose prices and quality MajiMap will surface to the public"
-          loading="lazy"
-          width="1200"
-          height="500"
-        />
-      </div>
       <div class="section-label">Why It Matters</div>
       <div class="section-title">Data That Drives Change</div>
 
@@ -226,32 +206,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     border-radius: 50%;
     display: inline-block;
     animation: pulse 2s infinite;
-  }
-
-  .research-image,
-  .vendor-image {
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 16px 50px rgba(10, 94, 181, 0.12);
-  }
-
-  .research-image img,
-  .vendor-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .image-caption {
-    font-size: 0.85rem;
-    color: var(--text-light);
-    text-align: center;
-    padding: 1rem 1.5rem;
-    background: var(--white);
-    font-style: italic;
-    margin: 0;
   }
 
   .concept-callout {
