@@ -6,13 +6,55 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   title="MajiMap"
   description="MajiMap is a public water data platform mapping pricing, quality, and access across Nairobi. Making water inequality visible and actionable."
 >
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
   <section class="page-hero">
-    <div class="hero-badge"><span class="pulse"></span> Coming Soon</div>
+    <div class="hero-badge"><span class="pulse"></span> Phase 1 &middot; Live</div>
     <h1>Maji<em>Map</em></h1>
     <p>A public water data platform mapping pricing, quality, and access across Nairobi.</p>
     <svg class="hero-wave" viewBox="0 0 1440 100" preserveAspectRatio="none">
       <path d="M0,60 C360,100 720,20 1080,60 C1260,80 1380,50 1440,60 L1440,100 L0,100Z" fill="white"/>
     </svg>
+  </section>
+
+  <!-- Interactive Map -->
+  <section class="majimap-section">
+    <div class="section-inner">
+      <div class="section-label">Interactive Map</div>
+      <div class="section-title">Water Infrastructure Across Nairobi</div>
+      <p class="majimap-lede">
+        Every drinking-water tap, well, kiosk, and spring that OpenStreetMap knows about in Nairobi,
+        plus our own field research on pricing. Data is pulled live from open sources and updates
+        itself &mdash; nothing is hand-curated.
+      </p>
+
+      <div class="majimap-wrap fade-in">
+        <div id="majimap" class="majimap-canvas" role="region" aria-label="Interactive map of Nairobi water infrastructure"></div>
+        <div class="majimap-legend" aria-hidden="true">
+          <div class="legend-title">OSM water features</div>
+          <div class="legend-row"><span class="dot" style="background:#2ca58d"></span> Drinking water / tap / kiosk</div>
+          <div class="legend-row"><span class="dot" style="background:#8b5a2b"></span> Well / borehole</div>
+          <div class="legend-row"><span class="dot" style="background:#0a5eb5"></span> Water works / tower</div>
+          <div class="legend-row"><span class="dot" style="background:#1a9641"></span> Spring</div>
+          <div class="legend-divider"></div>
+          <div class="legend-title">WPDx status</div>
+          <div class="legend-row"><span class="dot" style="background:#1a9641"></span> Functional</div>
+          <div class="legend-row"><span class="dot" style="background:#fdae61"></span> Needs repair</div>
+          <div class="legend-row"><span class="dot" style="background:#d7191c"></span> Non&#8209;functional</div>
+          <div class="legend-row"><span class="dot" style="background:#6b7280"></span> Unknown</div>
+        </div>
+      </div>
+
+      <div class="majimap-meta">
+        <div class="meta-item"><strong id="majimap-count">&mdash;</strong> OSM water points</div>
+        <div class="meta-item"><strong id="majimap-wpdx-count">&mdash;</strong> WPDx water points</div>
+        <div class="meta-item">Basemap: <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a></div>
+        <div class="meta-item">OSM live: <a href="https://overpass-api.de" target="_blank" rel="noopener">Overpass API</a></div>
+        <div class="meta-item">Water points: <a href="https://data.waterpointdata.org" target="_blank" rel="noopener">WPDx</a></div>
+        <div class="meta-item">Boundaries: <a href="https://data.humdata.org/dataset/cod-ab-ken" target="_blank" rel="noopener">HDX / OCHA</a></div>
+        <div class="meta-item" id="majimap-status">Loading water points&hellip;</div>
+      </div>
+    </div>
   </section>
 
   <!-- What is MajiMap -->
@@ -417,4 +459,506 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       grid-template-columns: 1fr;
     }
   }
+
+  /* ===== MajiMap interactive map ===== */
+  .majimap-section {
+    background: var(--white);
+  }
+
+  .majimap-lede {
+    max-width: 720px;
+    margin: 1.2rem auto 2.5rem;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .majimap-wrap {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 16px 50px rgba(10, 94, 181, 0.14);
+    border: 1px solid var(--border);
+  }
+
+  .majimap-canvas {
+    width: 100%;
+    height: 640px;
+    background: #eaf2fb;
+  }
+
+  .majimap-legend {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    padding: 0.9rem 1.1rem;
+    font-size: 0.78rem;
+    color: var(--text);
+    box-shadow: 0 6px 20px rgba(10, 94, 181, 0.12);
+    border: 1px solid var(--border);
+    z-index: 500;
+    max-width: 220px;
+  }
+
+  .majimap-legend .legend-title {
+    font-family: var(--serif);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--blue-deep);
+    margin-bottom: 0.4rem;
+  }
+
+  .majimap-legend .legend-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.15rem 0;
+    color: var(--text-light);
+  }
+
+  .majimap-legend .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+  }
+
+  .majimap-legend .dot.ring {
+    width: 14px;
+    height: 14px;
+  }
+
+  .majimap-legend .legend-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0.6rem 0;
+  }
+
+  .majimap-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem 2rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+    font-size: 0.78rem;
+    color: var(--text-light);
+  }
+
+  .majimap-meta strong {
+    color: var(--blue-deep);
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .majimap-meta a {
+    color: var(--blue);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--blue);
+  }
+
+  /* Leaflet popup tweaks to match brand */
+  :global(.leaflet-popup-content-wrapper) {
+    border-radius: 10px;
+    font-family: inherit;
+  }
+
+  :global(.leaflet-popup-content) {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0.7rem 0.9rem;
+  }
+
+  :global(.leaflet-popup-content strong) {
+    color: var(--blue-deep);
+  }
+
+  :global(.leaflet-control-layers) {
+    border-radius: 10px !important;
+    font-family: inherit !important;
+    font-size: 0.8rem !important;
+  }
+
+  @media (max-width: 700px) {
+    .majimap-canvas {
+      height: 480px;
+    }
+
+    .majimap-legend {
+      font-size: 0.72rem;
+      padding: 0.7rem 0.85rem;
+      max-width: 180px;
+    }
+  }
 </style>
+
+<script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script is:inline>
+  (function () {
+    function init() {
+      if (typeof L === 'undefined') {
+        // Leaflet not ready yet; retry shortly
+        return setTimeout(init, 60);
+      }
+      var el = document.getElementById('majimap');
+      if (!el || el.dataset.inited === '1') return;
+      el.dataset.inited = '1';
+
+      var statusEl = document.getElementById('majimap-status');
+      var countEl = document.getElementById('majimap-count');
+      function setStatus(msg) { if (statusEl) statusEl.textContent = msg; }
+
+      var map = L.map('majimap', {
+        scrollWheelZoom: false,
+        zoomControl: true,
+      }).setView([-1.286, 36.817], 11);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &middot; MajiMap by MiMaji Foundation',
+      }).addTo(map);
+
+      var boundariesLayer = L.layerGroup().addTo(map);
+      var osmWaterLayer = L.layerGroup().addTo(map);
+      var wpdxLayer = L.layerGroup().addTo(map);
+
+      L.control.layers(
+        null,
+        {
+          'Nairobi boundaries (HDX)': boundariesLayer,
+          'Water points (OSM, live)': osmWaterLayer,
+          'Water points (WPDx, Kenya)': wpdxLayer,
+        },
+        { collapsed: false, position: 'topright' }
+      ).addTo(map);
+
+      function fetchJSON(url) {
+        return fetch(url).then(function (r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.json();
+        });
+      }
+
+      // ----- Boundaries (HDX / OCHA) -----
+      // Try admin2 (sub-counties) first, then admin1 (counties). Filter to Nairobi.
+      function loadBoundaries() {
+        return fetchJSON('/data/majimap/ken_admin2.geojson')
+          .then(function (gj) { return { gj: gj, level: 'admin2' }; })
+          .catch(function () {
+            return fetchJSON('/data/majimap/ken_admin1.geojson')
+              .then(function (gj) { return { gj: gj, level: 'admin1' }; });
+          })
+          .catch(function () { return null; });
+      }
+
+      function nairobiOnly(gj) {
+        if (!gj || !gj.features) return gj;
+        var filtered = gj.features.filter(function (f) {
+          var p = f.properties || {};
+          var candidates = [
+            p.ADM1_EN, p.adm1_en, p.ADM1_NAME, p.NAME_1,
+            p.COUNTY, p.county, p.County,
+            p.ADM2_EN, p.adm2_en, p.name, p.NAME,
+          ];
+          for (var i = 0; i < candidates.length; i++) {
+            if (candidates[i] && String(candidates[i]).toLowerCase().indexOf('nairobi') !== -1) return true;
+          }
+          return false;
+        });
+        return { type: 'FeatureCollection', features: filtered.length ? filtered : gj.features };
+      }
+
+      loadBoundaries().then(function (res) {
+        if (!res) {
+          setStatus('Boundaries unavailable &mdash; drop ken_admin1/2.geojson into /public/data/majimap/');
+          return;
+        }
+        var gj = nairobiOnly(res.gj);
+        var layer = L.geoJSON(gj, {
+          style: {
+            color: '#0a5eb5',
+            weight: 1.4,
+            fillColor: '#0a5eb5',
+            fillOpacity: 0.04,
+          },
+          onEachFeature: function (f, l) {
+            var p = f.properties || {};
+            var label = p.ADM2_EN || p.adm2_en || p.NAME_2 || p.ADM1_EN || p.adm1_en || p.name || 'Area';
+            l.bindPopup('<strong>' + label + '</strong>');
+          },
+        }).addTo(boundariesLayer);
+        try {
+          var b = layer.getBounds();
+          if (b.isValid()) map.fitBounds(b, { padding: [20, 20] });
+        } catch (e) {}
+      });
+
+      // ----- OpenStreetMap water features via Overpass (live, cached 7 days) -----
+      var CACHE_KEY = 'majimap:osm_water:v1';
+      var TTL_MS = 7 * 24 * 60 * 60 * 1000;
+      var OVERPASS_QUERY = [
+        '[out:json][timeout:180];',
+        'area["name"="Nairobi"]["admin_level"="4"]->.a;',
+        '(',
+        '  node["amenity"="drinking_water"](area.a);',
+        '  node["amenity"="water_point"](area.a);',
+        '  node["man_made"="water_tap"](area.a);',
+        '  node["man_made"="water_well"](area.a);',
+        '  node["man_made"="water_works"](area.a);',
+        '  node["man_made"="water_tower"](area.a);',
+        '  node["natural"="spring"](area.a);',
+        '  way["man_made"="water_works"](area.a);',
+        '  way["man_made"="water_tower"](area.a);',
+        '  way["natural"="spring"](area.a);',
+        ');',
+        'out center tags;',
+      ].join('\n');
+
+      function overpassToGeoJSON(osm) {
+        var feats = [];
+        var els = (osm && osm.elements) || [];
+        for (var i = 0; i < els.length; i++) {
+          var el = els[i];
+          var lat = el.lat != null ? el.lat : (el.center && el.center.lat);
+          var lon = el.lon != null ? el.lon : (el.center && el.center.lon);
+          if (lat == null || lon == null) continue;
+          var props = { _id: el.type + '/' + el.id };
+          if (el.tags) for (var k in el.tags) props[k] = el.tags[k];
+          feats.push({
+            type: 'Feature',
+            geometry: { type: 'Point', coordinates: [lon, lat] },
+            properties: props,
+          });
+        }
+        return { type: 'FeatureCollection', features: feats };
+      }
+
+      function readCache() {
+        try {
+          var raw = localStorage.getItem(CACHE_KEY);
+          if (!raw) return null;
+          var obj = JSON.parse(raw);
+          if (!obj || !obj.t || !obj.data) return null;
+          if (Date.now() - obj.t > TTL_MS) return null;
+          return obj.data;
+        } catch (e) { return null; }
+      }
+
+      function writeCache(gj) {
+        try { localStorage.setItem(CACHE_KEY, JSON.stringify({ t: Date.now(), data: gj })); } catch (e) {}
+      }
+
+      function loadOverpass() {
+        // 1. Prefer a static export if the site owner committed one
+        return fetchJSON('/data/majimap/osm_water.geojson').catch(function () {
+          // 2. Serve from cache
+          var cached = readCache();
+          if (cached) return cached;
+          // 3. Hit a public Overpass endpoint
+          var endpoints = [
+            'https://overpass-api.de/api/interpreter',
+            'https://overpass.kumi.systems/api/interpreter',
+            'https://overpass.private.coffee/api/interpreter',
+          ];
+          var attempt = function (i) {
+            if (i >= endpoints.length) return Promise.reject(new Error('all endpoints failed'));
+            return fetch(endpoints[i], {
+              method: 'POST',
+              body: 'data=' + encodeURIComponent(OVERPASS_QUERY),
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            }).then(function (r) {
+              if (!r.ok) throw new Error('HTTP ' + r.status);
+              return r.json();
+            }).then(function (osm) {
+              var gj = overpassToGeoJSON(osm);
+              writeCache(gj);
+              return gj;
+            }).catch(function () { return attempt(i + 1); });
+          };
+          return attempt(0);
+        });
+      }
+
+      function colorFor(p) {
+        if (p.amenity === 'drinking_water' || p.amenity === 'water_point') return '#2ca58d';
+        if (p.man_made === 'water_tap') return '#2ca58d';
+        if (p.man_made === 'water_well') return '#8b5a2b';
+        if (p.man_made === 'water_works') return '#0a5eb5';
+        if (p.man_made === 'water_tower') return '#0a5eb5';
+        if (p.natural === 'spring') return '#1a9641';
+        return '#888';
+      }
+
+      function kindFor(p) {
+        return (p.amenity || p.man_made || p.natural || 'water').replace(/_/g, ' ');
+      }
+
+      setStatus('Loading water points from OpenStreetMap&hellip;');
+      loadOverpass().then(function (gj) {
+        L.geoJSON(gj, {
+          pointToLayer: function (f, latlng) {
+            return L.circleMarker(latlng, {
+              radius: 5,
+              fillColor: colorFor(f.properties || {}),
+              color: '#fff',
+              weight: 1,
+              fillOpacity: 0.92,
+            });
+          },
+          onEachFeature: function (f, l) {
+            var p = f.properties || {};
+            var kind = kindFor(p);
+            var name = p.name || p['name:en'] || kind;
+            var extras = '';
+            if (p.fee) extras += '<br/>Fee: ' + p.fee;
+            if (p.drinking_water) extras += '<br/>Drinking water: ' + p.drinking_water;
+            if (p.operator) extras += '<br/>Operator: ' + p.operator;
+            l.bindPopup(
+              '<strong>' + name + '</strong><br/>' +
+              '<em style="color:#6b7280">' + kind + '</em>' + extras
+            );
+          },
+        }).addTo(osmWaterLayer);
+        if (countEl) countEl.textContent = String(gj.features.length);
+        setStatus('Water points loaded &middot; cached for 7 days');
+      }).catch(function () {
+        setStatus('Could not load water points. Try again later.');
+      });
+
+      // ----- WPDx water points (Water Point Data Exchange) -----
+      // Parses the Kenya-wide CSV client-side, filters to a Nairobi bbox,
+      // and plots each row. Colouring reflects functional status.
+      var NAIROBI_BBOX = { minLat: -1.48, maxLat: -1.15, minLng: 36.64, maxLng: 37.12 };
+
+      // Tiny RFC-4180-aware CSV parser (handles quoted fields + embedded commas)
+      function parseCSV(text) {
+        var rows = [];
+        var row = [];
+        var field = '';
+        var inQuotes = false;
+        for (var i = 0; i < text.length; i++) {
+          var c = text.charCodeAt(i);
+          if (inQuotes) {
+            if (c === 34 /* " */) {
+              if (text.charCodeAt(i + 1) === 34) { field += '"'; i++; }
+              else { inQuotes = false; }
+            } else {
+              field += text[i];
+            }
+          } else {
+            if (c === 34) { inQuotes = true; }
+            else if (c === 44 /* , */) { row.push(field); field = ''; }
+            else if (c === 10 /* \n */ || c === 13 /* \r */) {
+              if (c === 13 && text.charCodeAt(i + 1) === 10) i++;
+              row.push(field); field = '';
+              if (row.length > 1 || row[0] !== '') rows.push(row);
+              row = [];
+            } else {
+              field += text[i];
+            }
+          }
+        }
+        if (field !== '' || row.length) { row.push(field); rows.push(row); }
+        if (!rows.length) return { headers: [], records: [] };
+        var headers = rows.shift().map(function (h) { return h.trim(); });
+        var records = rows.map(function (r) {
+          var obj = {};
+          for (var j = 0; j < headers.length; j++) obj[headers[j]] = r[j];
+          return obj;
+        });
+        return { headers: headers, records: records };
+      }
+
+      function pickKey(rec, candidates) {
+        for (var i = 0; i < candidates.length; i++) {
+          var k = candidates[i];
+          if (rec[k] != null && rec[k] !== '') return rec[k];
+          // case-insensitive fallback
+          for (var key in rec) {
+            if (key.toLowerCase() === k.toLowerCase() && rec[key] !== '') return rec[key];
+          }
+        }
+        return '';
+      }
+
+      function wpdxStatusColor(status) {
+        var s = (status || '').toLowerCase();
+        if (s.indexOf('yes') === 0 || s.indexOf('functional') !== -1) return '#1a9641';
+        if (s.indexOf('no') === 0 || s.indexOf('non') !== -1 || s.indexOf('abandoned') !== -1) return '#d7191c';
+        if (s.indexOf('repair') !== -1) return '#fdae61';
+        return '#6b7280';
+      }
+
+      function loadWPDx() {
+        return fetch('/Kenya_Data_20260412.csv').then(function (r) {
+          if (!r.ok) throw new Error('WPDx CSV HTTP ' + r.status);
+          return r.text();
+        });
+      }
+
+      loadWPDx().then(function (csv) {
+        var parsed = parseCSV(csv);
+        var records = parsed.records;
+        var added = 0;
+
+        for (var i = 0; i < records.length; i++) {
+          var rec = records[i];
+          var lat = parseFloat(pickKey(rec, ['lat_deg', 'latitude', 'lat', '#lat']));
+          var lng = parseFloat(pickKey(rec, ['lon_deg', 'longitude', 'long', 'lng', '#lon']));
+          if (!isFinite(lat) || !isFinite(lng)) continue;
+          if (lat < NAIROBI_BBOX.minLat || lat > NAIROBI_BBOX.maxLat) continue;
+          if (lng < NAIROBI_BBOX.minLng || lng > NAIROBI_BBOX.maxLng) continue;
+
+          var status = pickKey(rec, ['status_id', 'status', '#status_id']);
+          var source = pickKey(rec, ['water_source', '#source', '#water_source_clean']);
+          var tech = pickKey(rec, ['water_tech', '#water_tech', '#water_tech_clean']);
+          var name = pickKey(rec, ['water_point_name', '#water_point_name', 'source']) || 'Water point';
+          var year = pickKey(rec, ['install_year', '#install_year']);
+          var pay = pickKey(rec, ['pay', '#pay']);
+          var mgmt = pickKey(rec, ['management', '#management']);
+          var adm2 = pickKey(rec, ['adm2', '#adm2']);
+
+          var marker = L.circleMarker([lat, lng], {
+            radius: 6,
+            fillColor: wpdxStatusColor(status),
+            color: '#fff',
+            weight: 1.2,
+            fillOpacity: 0.92,
+          });
+
+          var html =
+            '<strong>' + name + '</strong><br/>' +
+            (adm2 ? '<em style="color:#6b7280">' + adm2 + '</em><br/>' : '') +
+            (source ? 'Source: ' + source + '<br/>' : '') +
+            (tech ? 'Tech: ' + tech + '<br/>' : '') +
+            (status ? 'Status: ' + status + '<br/>' : '') +
+            (year ? 'Installed: ' + year + '<br/>' : '') +
+            (mgmt ? 'Management: ' + mgmt + '<br/>' : '') +
+            (pay ? 'Pay: ' + pay : '');
+          marker.bindPopup(html);
+          marker.addTo(wpdxLayer);
+          added++;
+        }
+
+        var wpdxCountEl = document.getElementById('majimap-wpdx-count');
+        if (wpdxCountEl) wpdxCountEl.textContent = String(added);
+      }).catch(function () {
+        var wpdxCountEl = document.getElementById('majimap-wpdx-count');
+        if (wpdxCountEl) wpdxCountEl.textContent = '0';
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>
