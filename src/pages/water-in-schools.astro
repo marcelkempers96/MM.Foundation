@@ -18,6 +18,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- Programme Overview -->
   <section>
     <div class="section-inner">
+      <div class="schools-hero-image fade-in">
+        <img
+          src="/close-up-shot-young-child-drinking-water.png"
+          alt="A young Kenyan child drinking clean water from a glass &mdash; the next generation MiMaji Foundation&rsquo;s school WASH programme works to protect"
+          loading="lazy"
+          width="1200"
+          height="600"
+        />
+      </div>
       <div class="section-label">The Programme</div>
       <div class="section-title">Building Water Champions in Schools</div>
       <div class="section-subtitle">Our school WASH programme combines hands-on water quality testing with hygiene education and student leadership — creating a generation of water advocates.</div>
@@ -110,6 +119,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
+  .schools-hero-image {
+    margin-bottom: 3rem;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 16px 50px rgba(10, 94, 181, 0.12);
+  }
+
+  .schools-hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
   .programme-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

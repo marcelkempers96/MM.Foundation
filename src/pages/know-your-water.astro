@@ -1,0 +1,536 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Know Your Water"
+  description="Scan a QR code on your MiMaji water bottle to instantly see the source, quality test results, treatment process, and delivery date. Water transparency for every household in Nairobi and beyond."
+  ogImage="/mimaji-water-bottle-with-qr-code-label.png"
+>
+  <section class="page-hero">
+    <div class="hero-badge">Water Transparency</div>
+    <h1>Know Your <em>Water</em></h1>
+    <p>Every drop you drink should come with a story. Scan the QR code on your MiMaji water bottle and instantly see exactly where your water came from, how it was treated, and how it tested.</p>
+    <svg class="hero-wave" viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,60 C360,100 720,20 1080,60 C1260,80 1380,50 1440,60 L1440,100 L0,100Z" fill="white"/>
+    </svg>
+  </section>
+
+  <!-- Hero image -->
+  <section class="bottle-section">
+    <div class="section-inner">
+      <div class="bottle-grid fade-in">
+        <div class="bottle-content">
+          <div class="section-label">Why It Matters</div>
+          <h2>Most Kenyans Don&rsquo;t Know What&rsquo;s in Their Water</h2>
+          <p>Across Nairobi, millions of households buy water from informal vendors, kiosks, and delivery services every day &mdash; with no way to verify quality, source, or treatment. We change that with a single scan.</p>
+          <p>Every <a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji</a> bottle and refill carries a unique QR code. Scan it with your phone and you instantly know everything about that exact batch of water &mdash; before you drink it.</p>
+          <a href="https://mimaji.co.ke" target="_blank" rel="noopener" class="btn btn-primary">Order MiMaji Water &rarr;</a>
+        </div>
+        <div class="bottle-visual">
+          <img
+            src="/mimaji-water-bottle-with-qr-code-label.png"
+            alt="MiMaji 20L water bottle with QR code label showing serial number for water source verification"
+            loading="lazy"
+            width="400"
+            height="600"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="bg-sand">
+    <div class="section-inner">
+      <div class="section-label">How It Works</div>
+      <div class="section-title">Three Steps to Total Transparency</div>
+      <div class="section-subtitle">Scanning a MiMaji QR code takes seconds and works on any phone &mdash; no app download required.</div>
+
+      <div class="how-grid fade-in">
+        <div class="how-image">
+          <img
+            src="/qr-code-how-it-works.png"
+            alt="Step-by-step illustration of how the MiMaji Know Your Water QR code system works for verifying water quality"
+            loading="lazy"
+            width="800"
+            height="500"
+          />
+        </div>
+        <div class="how-steps">
+          <div class="step-item">
+            <div class="step-num">01</div>
+            <div>
+              <h4>Find the QR code</h4>
+              <p>Every MiMaji water bottle, jerrycan, and refill container carries a unique QR code label with a serial number. Look for it on the side of the bottle.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">02</div>
+            <div>
+              <h4>Scan with your phone</h4>
+              <p>Open your phone&rsquo;s camera and point it at the code. No app download needed. The link opens directly in your browser.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">03</div>
+            <div>
+              <h4>See your water&rsquo;s full story</h4>
+              <p>Instantly view the source, treatment, quality test results, and delivery date for that exact batch &mdash; verified and timestamped.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What you see -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">In the App</div>
+      <div class="section-title">Everything You Need to Trust Your Water</div>
+      <div class="section-subtitle">When you scan a MiMaji QR code, here&rsquo;s what your phone shows.</div>
+
+      <div class="info-grid fade-in">
+        <div class="info-content">
+          <div class="info-feature">
+            <div class="feature-icon">◉</div>
+            <div>
+              <h4>Water Source</h4>
+              <p>The exact borehole, refinery, or treatment plant your water came from &mdash; with location and operator details.</p>
+            </div>
+          </div>
+          <div class="info-feature">
+            <div class="feature-icon">◆</div>
+            <div>
+              <h4>Treatment Process</h4>
+              <p>How the water was purified: filtration, reverse osmosis, UV, mineralisation. Full process disclosure, every batch.</p>
+            </div>
+          </div>
+          <div class="info-feature">
+            <div class="feature-icon">▲</div>
+            <div>
+              <h4>Quality Test Results</h4>
+              <p>TDS readings, pH levels, microbiological test results, and the date of the most recent quality check.</p>
+            </div>
+          </div>
+          <div class="info-feature">
+            <div class="feature-icon">●</div>
+            <div>
+              <h4>Batch & Delivery Date</h4>
+              <p>When the water was bottled, who delivered it, and how fresh it is &mdash; right down to the timestamp.</p>
+            </div>
+          </div>
+          <div class="info-feature">
+            <div class="feature-icon">↗</div>
+            <div>
+              <h4>Vendor Verification</h4>
+              <p>Confirm your delivery rider is a verified <a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji partner</a> &mdash; not someone reselling unknown water.</p>
+            </div>
+          </div>
+          <div class="info-feature">
+            <div class="feature-icon">★</div>
+            <div>
+              <h4>Report Issues</h4>
+              <p>Tasted off? Container damaged? Report directly through the scan page &mdash; the MiMaji team responds within hours.</p>
+            </div>
+          </div>
+        </div>
+        <div class="info-image">
+          <img
+            src="/qr-code-app-information.png"
+            alt="MiMaji Know Your Water app screen showing detailed water source, treatment, and quality information after QR code scan"
+            loading="lazy"
+            width="500"
+            height="700"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before & After Impact -->
+  <section class="bg-sand">
+    <div class="section-inner">
+      <div class="section-label">The Impact</div>
+      <div class="section-title">Before MiMaji vs. After MiMaji</div>
+      <div class="section-subtitle">QR-coded water transparency changes the relationship between households and their water supply &mdash; from blind trust to verified confidence.</div>
+
+      <div class="impact-image fade-in">
+        <img
+          src="/qr-code-before-after-impact.png"
+          alt="Before and after impact of using the MiMaji Know Your Water QR code tool — showing the shift from unknown water sources to verified, transparent quality"
+          loading="lazy"
+          width="1000"
+          height="600"
+        />
+      </div>
+
+      <div class="ba-grid fade-in">
+        <div class="ba-card before">
+          <div class="ba-tag">Before</div>
+          <h4>Blind Trust</h4>
+          <ul>
+            <li>No idea where the water came from</li>
+            <li>No quality testing visible to consumer</li>
+            <li>Vendors can&rsquo;t be verified</li>
+            <li>Bottles refilled with unknown water</li>
+            <li>No accountability when things go wrong</li>
+          </ul>
+        </div>
+        <div class="ba-card after">
+          <div class="ba-tag">After</div>
+          <h4>Verified Confidence</h4>
+          <ul>
+            <li>Source, treatment, and quality on every bottle</li>
+            <li>Real-time TDS and microbiological data</li>
+            <li>Verified MiMaji vendors only</li>
+            <li>Tamper-evident packaging and seals</li>
+            <li>Direct line to report and resolve issues</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why this matters for the Foundation -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">Foundation Connection</div>
+      <div class="section-title">Why MiMaji Foundation Champions This</div>
+      <div class="section-subtitle">Water transparency isn&rsquo;t just a product feature &mdash; it&rsquo;s a public health intervention. We believe every household deserves to know what&rsquo;s in their water.</div>
+
+      <div class="why-grid fade-in">
+        <div class="why-card">
+          <h4>Public Health</h4>
+          <p>Waterborne diseases kill thousands of children every year in Sub-Saharan Africa. Most of these deaths come from water that was never tested. QR-verified water makes contamination traceable and preventable.</p>
+        </div>
+        <div class="why-card">
+          <h4>Consumer Power</h4>
+          <p>When residents can verify quality before drinking, they reward suppliers who do the work. The market shifts toward safer water for everyone &mdash; including the most vulnerable.</p>
+        </div>
+        <div class="why-card">
+          <h4>Data for MajiMap</h4>
+          <p>Aggregated, anonymised scan data feeds into <a href="/majimap/">MajiMap</a> &mdash; showing water quality patterns across Nairobi. Every scan strengthens the collective picture of water in our city.</p>
+        </div>
+        <div class="why-card">
+          <h4>Accountability</h4>
+          <p>QR codes create a permanent record. If a batch fails quality testing later, every household that received it can be notified instantly. This is what real water safety looks like.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-title">Ready to Know Your Water?</div>
+    <p>Order MiMaji-verified water for your home, office, or event. Every bottle carries a QR code. Every scan is a step toward water transparency for all.</p>
+    <div class="cta-buttons">
+      <a href="https://mimaji.co.ke" target="_blank" rel="noopener" class="btn btn-white">Order on MiMaji.co.ke &rarr;</a>
+      <a href="/majimap/" class="btn btn-outline">Explore MajiMap</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .bottle-section {
+    padding: 6rem 2rem 4rem;
+  }
+
+  .bottle-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .bottle-content h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    color: var(--blue-deep);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .bottle-content p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+  }
+
+  .bottle-content a:not(.btn) {
+    color: var(--blue);
+    font-weight: 600;
+  }
+
+  .bottle-visual {
+    text-align: center;
+  }
+
+  .bottle-visual img {
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(10, 94, 181, 0.18);
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* How it works */
+  .how-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 3rem;
+  }
+
+  .how-image img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(10, 94, 181, 0.12);
+  }
+
+  .how-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+
+  .step-item {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+  }
+
+  .step-num {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    color: var(--blue);
+    background: var(--blue-light);
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .step-item h4 {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--blue-deep);
+    margin-bottom: 0.4rem;
+  }
+
+  .step-item p {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+
+  /* Info features */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 3rem;
+  }
+
+  .info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+
+  .info-feature {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .feature-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 12px;
+    background: var(--blue-light);
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .info-feature h4 {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--blue-deep);
+    margin-bottom: 0.3rem;
+  }
+
+  .info-feature p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+
+  .info-feature a {
+    color: var(--blue);
+    font-weight: 600;
+  }
+
+  .info-image img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(10, 94, 181, 0.12);
+  }
+
+  /* Before / After */
+  .impact-image {
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  .impact-image img {
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(10, 94, 181, 0.12);
+  }
+
+  .ba-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .ba-card {
+    padding: 2rem;
+    border-radius: 16px;
+    background: var(--white);
+    border: 1px solid var(--border);
+  }
+
+  .ba-card.before {
+    border-left: 4px solid #dc3545;
+  }
+
+  .ba-card.after {
+    border-left: 4px solid var(--teal);
+  }
+
+  .ba-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    margin-bottom: 0.8rem;
+  }
+
+  .ba-card.before .ba-tag {
+    background: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+  }
+
+  .ba-card.after .ba-tag {
+    background: rgba(26, 158, 143, 0.1);
+    color: var(--teal);
+  }
+
+  .ba-card h4 {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    color: var(--blue-deep);
+    margin-bottom: 0.8rem;
+  }
+
+  .ba-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .ba-card ul li {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    padding: 0.4rem 0;
+    padding-left: 1.4rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .ba-card.before ul li::before {
+    content: '✕';
+    position: absolute;
+    left: 0;
+    color: #dc3545;
+    font-weight: 700;
+  }
+
+  .ba-card.after ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-weight: 700;
+  }
+
+  /* Why this matters */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .why-card {
+    padding: 2rem;
+    border-radius: 16px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+
+  .why-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(10, 94, 181, 0.08);
+  }
+
+  .why-card h4 {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--blue-deep);
+    margin-bottom: 0.6rem;
+  }
+
+  .why-card p {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+
+  .why-card a {
+    color: var(--blue);
+    font-weight: 600;
+  }
+
+  @media (max-width: 900px) {
+    .bottle-grid,
+    .how-grid,
+    .info-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .ba-grid,
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

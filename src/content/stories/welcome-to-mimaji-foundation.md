@@ -4,8 +4,8 @@ description: "Introducing MiMaji Foundation — our mission to bring clean, safe
 date: 2025-06-01
 author: "MiMaji Foundation"
 category: "news"
-image: "https://images.unsplash.com/photo-1594398901394-4e34b2348fb0?w=800&h=450&fit=crop"
-imageAlt: "Children at a water point in East Africa"
+image: "/women-carrying-water-jerrycans-kenya.png"
+imageAlt: "Women carrying jerrycans of water in Kenya — the reality MiMaji Foundation works to change"
 ---
 
 Today we officially launch MiMaji Foundation — the social impact arm of [MiMaji](https://mimaji.co.ke), Kenya's water delivery technology platform.

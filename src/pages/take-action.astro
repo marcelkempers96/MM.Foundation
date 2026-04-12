@@ -24,7 +24,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <div class="action-grid fade-in">
         <div class="action-card donate">
-          <div class="action-icon">◆</div>
+          <img src="/M-PESA-payment.png" alt="M-Pesa mobile money payment screen showing how donations to MiMaji Foundation can be made via M-Pesa in Kenya" class="action-thumb" loading="lazy" width="600" height="400" />
           <h3>Donate</h3>
           <p>Your contribution directly funds our pilot programmes: water quality testing, community education, and subsidised delivery for households who have been overlooked. Every shilling is accounted for.</p>
           <ul>
@@ -87,16 +87,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="order-content">
           <div class="section-label">Support Through Action</div>
           <h2>Order Water, Fund the Mission</h2>
-          <p>Every water order placed through the <a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji platform</a> supports our foundation's work. When you choose MiMaji for your water delivery, you're directly funding clean water access for communities who need it most.</p>
+          <p>Every water order placed through the <a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji platform</a> supports our foundation&rsquo;s work. When you choose MiMaji for your water delivery, you&rsquo;re directly funding clean water access for communities who need it most.</p>
           <a href="https://mimaji.co.ke" target="_blank" rel="noopener" class="btn btn-primary">Order Water on MiMaji.co.ke &rarr;</a>
         </div>
         <div class="order-visual">
-          <div class="order-card-inner">
-            <span class="order-icon">📱</span>
-            <h4>MiMaji Platform</h4>
-            <p>Kenya's water delivery app. Verified sources. Quality tested. Fair pricing.</p>
-            <a href="https://mimaji.co.ke" target="_blank" rel="noopener">mimaji.co.ke &rarr;</a>
-          </div>
+          <img
+            src="/20L-10L-bottles-tanks-nairobi-water-types.png"
+            alt="MiMaji 10 litre and 20 litre water bottles, jerrycans and tanks &mdash; the verified, quality-tested water types delivered through the MiMaji platform in Nairobi"
+            loading="lazy"
+            width="600"
+            height="600"
+          />
         </div>
       </div>
     </div>
@@ -154,6 +155,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .action-icon {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+  }
+
+  .action-thumb {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1.2rem;
   }
 
   .action-card h3 {
@@ -230,44 +239,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-weight: 600;
   }
 
-  .order-card-inner {
-    padding: 2.5rem;
+  .order-visual img {
+    width: 100%;
     border-radius: 16px;
-    background: var(--white);
-    border: 1px solid var(--border);
-    text-align: center;
-    transition: all 0.3s;
-  }
-
-  .order-card-inner:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(10, 94, 181, 0.1);
-  }
-
-  .order-icon {
-    font-size: 3rem;
-    display: block;
-    margin-bottom: 1rem;
-  }
-
-  .order-card-inner h4 {
-    font-family: var(--serif);
-    font-size: 1.2rem;
-    color: var(--blue-deep);
-    margin-bottom: 0.5rem;
-  }
-
-  .order-card-inner p {
-    font-size: 0.85rem;
-    color: var(--text-light);
-    margin-bottom: 1rem;
-    line-height: 1.5;
-  }
-
-  .order-card-inner a {
-    color: var(--blue);
-    font-weight: 600;
-    font-size: 0.9rem;
+    box-shadow: 0 12px 40px rgba(10, 94, 181, 0.12);
   }
 
   @media (max-width: 900px) {

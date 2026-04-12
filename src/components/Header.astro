@@ -7,14 +7,16 @@ const navLinks = [
   { href: '/programs/', label: 'Programs' },
   { href: '/impact/', label: 'Impact' },
   { href: '/majimap/', label: 'MajiMap' },
+  { href: '/know-your-water/', label: 'Know Your Water' },
   { href: '/stories/', label: 'Stories' },
 ];
 ---
 
 <header class="site-header" id="nav">
   <nav class="nav-container">
-    <a href="/" class="nav-logo">
-      <span class="dot"></span> MiMaji Foundation
+    <a href="/" class="nav-logo" aria-label="MiMaji Foundation home">
+      <img src="/MiMaji-Foundation-Logo.png" alt="MiMaji Foundation logo" class="logo-img" width="44" height="44" />
+      <span class="logo-text">MiMaji Foundation</span>
     </a>
 
     <button class="mobile-menu" aria-label="Toggle navigation" aria-expanded="false">
@@ -71,6 +73,26 @@ const navLinks = [
     align-items: center;
     gap: 0.6rem;
     text-decoration: none;
+  }
+
+  .logo-img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    padding: 4px;
+    transition: background 0.4s;
+  }
+
+  .site-header.scrolled .logo-img {
+    background: transparent;
+    padding: 0;
+  }
+
+  .logo-text {
+    font-size: 1.15rem;
+    font-weight: 400;
   }
 
   .dot {

@@ -4,8 +4,8 @@ description: "A deep dive into water pricing inequality across Nairobi — how r
 date: 2025-07-15
 author: "MiMaji Foundation"
 category: "explainer"
-image: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?w=800&h=450&fit=crop"
-imageAlt: "Water vendors in Nairobi"
+image: "/blog2-nairobi-water-costs.png"
+imageAlt: "A woman buying water from a vendor in Nairobi — illustrating the price inequality of urban water in Kenya"
 ---
 
 In Nairobi, water isn't just scarce — it's unequal. Our research for [MajiMap](/majimap/) reveals a stark pricing divide that affects millions of residents every day.

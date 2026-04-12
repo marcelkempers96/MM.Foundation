@@ -20,6 +20,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="section-inner">
       <div class="section-label">Our Origin</div>
       <div class="section-title">Why We Started MiMaji Foundation</div>
+      <div class="origin-image fade-in">
+        <img
+          src="/nairobi-home-family-4-washing-dishes-by-the-sink-urban-homes.png"
+          alt="A Nairobi family of four washing dishes by the kitchen sink in their urban home — illustrating the everyday water access challenges MiMaji Foundation works to solve in Kenya"
+          loading="lazy"
+          width="1200"
+          height="600"
+        />
+      </div>
       <div class="about-grid fade-in">
         <div class="about-text">
           <p>While building <a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji</a> as a water delivery platform in Nairobi, we discovered something troubling: the communities that needed clean water most were paying the highest prices for the worst quality. Residents in informal settlements like Kibera pay up to 10 times more per litre than households in connected, wealthier neighbourhoods.</p>
@@ -58,6 +67,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="section-label">The MiMaji Ecosystem</div>
       <div class="section-title">Foundation + Platform = Greater Impact</div>
       <div class="section-subtitle">The MiMaji Foundation and the MiMaji water delivery platform work hand in hand to create a complete water access ecosystem.</div>
+      <div class="ecosystem-image fade-in">
+        <img
+          src="/Kinds-of-water-delivery-in-Nairobi-including-link-to-MiMaji.png"
+          alt="The full Nairobi water delivery ecosystem — boda boda riders, NCWSC tankers, handcart vendors, the MiMaji mobile app, and verified MiMaji delivery riders working together to bring clean water to homes"
+          loading="lazy"
+          width="1200"
+          height="500"
+        />
+      </div>
+
       <div class="ecosystem-grid fade-in">
         <div class="eco-card">
           <div class="eco-badge">Platform</div>
@@ -134,6 +153,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     margin-top: 3rem;
+  }
+
+  .origin-image,
+  .ecosystem-image {
+    margin: 0 0 3rem;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 16px 50px rgba(10, 94, 181, 0.12);
+  }
+
+  .origin-image img,
+  .ecosystem-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ecosystem-image {
+    margin: 0 0 2.5rem;
   }
 
   .about-text p {

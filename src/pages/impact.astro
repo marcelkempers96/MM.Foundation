@@ -15,6 +15,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </svg>
   </section>
 
+  <!-- Vision Image -->
+  <section>
+    <div class="section-inner">
+      <div class="vision-image fade-in">
+        <img
+          src="/modern-kenya-waterrefinery.png"
+          alt="A modern Kenyan water refinery and treatment facility — the kind of infrastructure MiMaji Foundation supports through advocacy and partnerships across East Africa"
+          loading="lazy"
+          width="1200"
+          height="600"
+        />
+        <p class="image-caption">What success looks like &mdash; modern, transparent water infrastructure serving every household in Kenya.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Honest Disclosure -->
   <section class="bg-sand">
     <div class="section-inner">
@@ -355,6 +371,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-size: 0.95rem;
     color: var(--text-light);
     margin-bottom: 1rem;
+  }
+
+  /* Vision image */
+  .vision-image {
+    margin-top: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 16px 50px rgba(10, 94, 181, 0.12);
+  }
+
+  .vision-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .image-caption {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    text-align: center;
+    padding: 1rem 1.5rem;
+    background: var(--white);
+    font-style: italic;
+    margin: 0;
   }
 
   /* Honest callout */
