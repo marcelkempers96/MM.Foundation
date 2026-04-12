@@ -267,14 +267,20 @@ section {
 .mission-card:nth-child(3)::before { background: var(--gold); }
 
 .mission-card .card-icon {
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
   margin-bottom: 1.2rem;
+}
+
+.mission-card .card-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: currentColor;
 }
 
 .mission-card:nth-child(1) .card-icon { background: var(--blue-light); color: var(--blue); }
@@ -292,7 +298,31 @@ section {
   font-size: 0.88rem;
   color: var(--text-light);
   line-height: 1.7;
+  margin-bottom: 1.3rem;
 }
+
+.mission-card .card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--blue);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.mission-card .card-link:hover {
+  color: var(--blue-deep);
+  border-bottom-color: var(--gold);
+}
+
+.mission-card:nth-child(2) .card-link { color: var(--teal); }
+.mission-card:nth-child(2) .card-link:hover { color: var(--blue-deep); }
+.mission-card:nth-child(3) .card-link { color: var(--gold); }
+.mission-card:nth-child(3) .card-link:hover { color: var(--blue-deep); }
 
 /* ===== Impact numbers ===== */
 .impact-numbers {
