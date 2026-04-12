@@ -1,0 +1,25 @@
+/* TEAM */
+
+MiMaji Foundation
+  Site: mimaji.org
+  Contact: foundation@mimaji.org
+  WhatsApp: +254 758 434 076
+  Location: Nairobi, Kenya
+
+/* THANKS */
+
+  OpenStreetMap contributors
+  Water Point Data Exchange (WPDx)
+  Humanitarian Data Exchange (HDX)
+  The communities of Nairobi who share their water stories
+
+/* TECHNOLOGY */
+
+  Astro (static site generator)
+  Leaflet (interactive maps)
+  GitHub Pages (hosting)
+  Formspree (contact form)
+
+/* MISSION */
+
+  Clean water is a right, not a privilege.

@@ -2,15 +2,20 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="site-footer">
+<footer class="site-footer" itemscope itemtype="https://schema.org/NGO">
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
         <div class="logo">
           <img src="/MiMaji-Foundation-Logo.png" alt="MiMaji Foundation logo" width="40" height="40" />
-          MiMaji Foundation
+          <span itemprop="name">MiMaji Foundation</span>
         </div>
-        <p>Clean water access for every community. A non-profit initiative powered by the MiMaji platform, headquartered in Nairobi, Kenya.</p>
+        <p itemprop="description">Clean water access for every community. A non-profit initiative powered by the MiMaji platform, headquartered in Nairobi, Kenya.</p>
+        <address class="footer-address" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+          <span itemprop="addressLocality">Nairobi</span>,
+          <span itemprop="addressRegion">Nairobi County</span>,
+          <span itemprop="addressCountry">Kenya</span>
+        </address>
       </div>
       <div class="footer-col">
         <h4>Foundation</h4>
@@ -33,14 +38,19 @@ const currentYear = new Date().getFullYear();
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <a href="mailto:foundation@mimaji.org">foundation@mimaji.org</a>
+        <a href="mailto:foundation@mimaji.org" itemprop="email">foundation@mimaji.org</a>
         <a href="https://wa.me/254758434076" target="_blank" rel="noopener">WhatsApp: +254 758 434 076</a>
         <span class="footer-static">Nairobi, Kenya</span>
         <a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji.co.ke</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; {currentYear} MiMaji Foundation. All rights reserved. &bull; Headquartered in Nairobi, Kenya.</p>
+      <p>&copy; {currentYear} <span itemprop="legalName">MiMaji Foundation</span>. All rights reserved. &bull; Registered in Nairobi, Kenya.</p>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="/.well-known/security.txt">Security</a>
+      </nav>
     </div>
   </div>
 </footer>
@@ -97,6 +107,15 @@ const currentYear = new Date().getFullYear();
     max-width: 280px;
   }
 
+  .footer-address {
+    display: block;
+    font-style: normal;
+    font-size: 0.78rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 0.8rem;
+  }
+
   .footer-col h4 {
     font-size: 0.72rem;
     text-transform: uppercase;
@@ -147,6 +166,23 @@ const currentYear = new Date().getFullYear();
   .footer-bottom p {
     font-size: 0.75rem;
     margin: 0;
+  }
+
+  .footer-legal {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-legal a {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-legal a:hover {
+    color: var(--gold);
   }
 
   @media (max-width: 900px) {

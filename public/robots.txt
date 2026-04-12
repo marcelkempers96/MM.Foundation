@@ -1,4 +1,19 @@
+# MiMaji Foundation robots.txt
+# https://mimaji.org
+
 User-agent: *
 Allow: /
+Disallow: /.well-known/
 
+# Well-behaved crawlers welcome
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Sitemap
 Sitemap: https://mimaji.org/sitemap-index.xml

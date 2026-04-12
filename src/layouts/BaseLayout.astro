@@ -20,8 +20,12 @@ const { title, description, ogImage, type } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#0A5EB5" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link rel="icon" type="image/png" href="/MiMaji-Foundation-Logo-512x512.png" />
     <link rel="apple-touch-icon" href="/MiMaji-Foundation-Logo-512x512.png" />
+    <link rel="author" href="/humans.txt" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -34,14 +38,31 @@ const { title, description, ogImage, type } = Astro.props;
     </main>
     <Footer />
 
-    <!-- Structured Data: Organization -->
+    <!-- Structured Data: Organization / NGO -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "NGO",
+      "@id": "https://mimaji.org/#organization",
       "name": "MiMaji Foundation",
+      "legalName": "MiMaji Foundation",
+      "alternateName": "MiMaji.org",
       "url": "https://mimaji.org",
-      "description": "MiMaji Foundation works to solve the water crisis across East Africa and the world by providing clean, safe water access to underserved communities.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://mimaji.org/MiMaji-Foundation-Logo-512x512.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://mimaji.org/MiMaji-Foundation-Logo-512x512.png",
+      "description": "MiMaji Foundation works to bring clean, safe, transparent water access to communities across East Africa through water quality testing, community education, and the MajiMap public data platform.",
+      "slogan": "Clean water is a right, not a privilege.",
       "foundingDate": "2025",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nairobi",
+        "addressRegion": "Nairobi County",
+        "addressCountry": "KE"
+      },
       "areaServed": [
         {"@type": "Country", "name": "Kenya"},
         {"@type": "Country", "name": "Uganda"},
@@ -51,16 +72,44 @@ const { title, description, ogImage, type } = Astro.props;
         {"@type": "Country", "name": "Burundi"},
         {"@type": "Country", "name": "Tanzania"}
       ],
+      "knowsLanguage": ["en", "sw"],
       "parentOrganization": {
         "@type": "Organization",
         "name": "MiMaji",
         "url": "https://www.mimaji.co.ke"
       },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "email": "foundation@mimaji.org",
-        "contactType": "General"
-      }
+      "sameAs": [
+        "https://www.mimaji.co.ke"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "email": "foundation@mimaji.org",
+          "contactType": "customer support",
+          "availableLanguage": ["English", "Swahili"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+254-758-434-076",
+          "contactType": "customer support",
+          "contactOption": "HearingImpairedSupported",
+          "availableLanguage": ["English", "Swahili"]
+        }
+      ]
+    })} />
+
+    <!-- Structured Data: Website -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://mimaji.org/#website",
+      "url": "https://mimaji.org",
+      "name": "MiMaji Foundation",
+      "description": "Clean water access for every community in East Africa.",
+      "publisher": {
+        "@id": "https://mimaji.org/#organization"
+      },
+      "inLanguage": "en"
     })} />
 
     <!-- Fade-in observer -->

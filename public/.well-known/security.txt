@@ -1,0 +1,9 @@
+# If you find a security issue in mimaji.org, tell us.
+# This file follows RFC 9116.
+
+Contact: mailto:foundation@mimaji.org
+Contact: https://wa.me/254758434076
+Expires: 2027-04-12T00:00:00.000Z
+Preferred-Languages: en, sw
+Canonical: https://mimaji.org/.well-known/security.txt
+Policy: https://mimaji.org/terms/

@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const lastUpdated = 'April 2026';
+---
+
+<BaseLayout
+  title="Terms of Use"
+  description="Terms of use for the MiMaji Foundation website. Basic rules for using mimaji.org and interacting with our content."
+>
+  <section class="page-hero">
+    <div class="hero-badge">Legal</div>
+    <h1>Terms of <em>Use</em></h1>
+    <p>Basic rules for using mimaji.org and interacting with our content.</p>
+    <svg class="hero-wave" viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,60 C360,100 720,20 1080,60 C1260,80 1380,50 1440,60 L1440,100 L0,100Z" fill="white"/>
+    </svg>
+  </section>
+
+  <section class="legal-section">
+    <div class="legal-inner">
+      <p class="last-updated">Last updated: {lastUpdated}</p>
+
+      <h2>About This Site</h2>
+      <p>This website (<a href="https://mimaji.org">mimaji.org</a>) is operated by MiMaji Foundation, a non-profit initiative headquartered in Nairobi, Kenya. The site exists to share information about the water crisis in East Africa, our programmes, and ways to support our work.</p>
+
+      <h2>Use of Content</h2>
+      <p>Everything on this site, including text, images, data, and design, is either created by MiMaji Foundation or used with permission. You are welcome to:</p>
+      <ul>
+        <li>Share links to our pages</li>
+        <li>Quote short passages with attribution ("via MiMaji Foundation, mimaji.org")</li>
+        <li>Embed or reference our published data briefs</li>
+        <li>Reprint full articles for non-commercial purposes with a clear credit and link back</li>
+      </ul>
+      <p>For any other use, including commercial reproduction, please contact us first at <a href="mailto:foundation@mimaji.org">foundation@mimaji.org</a>.</p>
+
+      <h2>Information Accuracy</h2>
+      <p>We work hard to make sure the information on this site is accurate and sourced. Statistics are cited from their original authorities where possible (RWSN, FAO, UN-Water, World Bank, WRI, WPDx, OpenStreetMap). However, this site is not a substitute for professional advice and we do not guarantee that everything here is current or error-free.</p>
+
+      <h2>MajiMap Data</h2>
+      <p>Our <a href="/majimap/">MajiMap</a> platform combines data from multiple sources (field surveys, OpenStreetMap, the Water Point Data Exchange). Data may be incomplete or out of date. Do not rely on MajiMap alone for life-safety decisions. Always verify water quality with proper testing before consumption.</p>
+
+      <h2>MiMaji Platform</h2>
+      <p>We link to <a href="https://mimaji.co.ke" target="_blank" rel="noopener">mimaji.co.ke</a> (the MiMaji water delivery platform). Once you leave mimaji.org, the MiMaji platform's own terms and policies apply. We are the non-profit foundation arm, not the commercial platform.</p>
+
+      <h2>Donations</h2>
+      <p>Donations to MiMaji Foundation are voluntary and support our programmes. We will always acknowledge donations and use them for the stated purpose. If you donate by mistake or wish to discuss your contribution, contact us within 30 days.</p>
+
+      <h2>No Warranty</h2>
+      <p>This site is provided "as is". We do our best, but we cannot promise the site will always be available, error-free, or free of security issues. Use it at your own risk.</p>
+
+      <h2>Liability</h2>
+      <p>To the extent permitted by law, MiMaji Foundation is not liable for any damages arising from your use of this site or the information it contains.</p>
+
+      <h2>Changes</h2>
+      <p>We may update these terms over time. The date at the top of this page reflects the latest version. Continued use of the site after changes means you accept the updated terms.</p>
+
+      <h2>Governing Law</h2>
+      <p>These terms are governed by the laws of the Republic of Kenya.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about these terms? Email <a href="mailto:foundation@mimaji.org">foundation@mimaji.org</a> or reach us via <a href="/contact/">the contact page</a>.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal-section {
+    padding: 5rem 2rem;
+  }
+
+  .legal-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .last-updated {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .legal-inner h2 {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    color: var(--blue-deep);
+    margin-top: 2.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .legal-inner p {
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .legal-inner ul {
+    margin-bottom: 1.2rem;
+    padding-left: 1.5rem;
+  }
+
+  .legal-inner li {
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: 0.4rem;
+  }
+
+  .legal-inner a {
+    color: var(--blue);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+</style>

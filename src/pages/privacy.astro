@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const lastUpdated = 'April 2026';
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="MiMaji Foundation privacy policy. We don't track visitors, don't run ads, and don't sell your data. Contact form submissions are handled by Formspree."
+>
+  <section class="page-hero">
+    <div class="hero-badge">Legal</div>
+    <h1>Privacy <em>Policy</em></h1>
+    <p>How MiMaji Foundation handles your data. Short version: we don't track you.</p>
+    <svg class="hero-wave" viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,60 C360,100 720,20 1080,60 C1260,80 1380,50 1440,60 L1440,100 L0,100Z" fill="white"/>
+    </svg>
+  </section>
+
+  <section class="legal-section">
+    <div class="legal-inner">
+      <p class="last-updated">Last updated: {lastUpdated}</p>
+
+      <h2>Who We Are</h2>
+      <p>MiMaji Foundation is a non-profit initiative headquartered in Nairobi, Kenya. We work to bring clean, transparent water access to underserved communities across East Africa. This privacy policy applies to <a href="https://mimaji.org">mimaji.org</a>.</p>
+
+      <h2>What We Collect</h2>
+      <p>Almost nothing. This site is a static website hosted on GitHub Pages. We do not run our own servers, we do not have user accounts, and we do not store any data about you.</p>
+      <ul>
+        <li><strong>No tracking pixels.</strong> We do not use Google Analytics, Facebook Pixel, or any third-party analytics.</li>
+        <li><strong>No cookies.</strong> We do not set cookies or use local storage to identify visitors.</li>
+        <li><strong>No ads.</strong> We do not run any advertising.</li>
+        <li><strong>No profiling.</strong> We do not build profiles of visitors or share data with third parties.</li>
+      </ul>
+
+      <h2>Contact Form</h2>
+      <p>When you submit our contact form, the data (name, email, subject, message) is sent to our email inbox through a service called <a href="https://formspree.io" target="_blank" rel="noopener">Formspree</a>. Formspree acts as a messenger. See their <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">privacy policy</a> for details.</p>
+      <p>We use the information you send us only to respond to your enquiry. We do not add you to a mailing list unless you explicitly ask to be added.</p>
+
+      <h2>WhatsApp Contact</h2>
+      <p>When you click a WhatsApp link on this site, your device opens WhatsApp and sends a message to our number (+254 758 434 076). WhatsApp is provided by Meta and has its own privacy policy. We only see the messages you choose to send us.</p>
+
+      <h2>External Links</h2>
+      <p>We link to the <a href="https://mimaji.co.ke" target="_blank" rel="noopener">MiMaji water delivery platform</a> and other partners. Once you leave mimaji.org, their privacy policies apply, not ours.</p>
+
+      <h2>Server Logs</h2>
+      <p>Our hosting provider (GitHub Pages) keeps standard web server logs for security and abuse prevention. These logs are controlled by GitHub and covered by the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>. We do not access or store these logs ourselves.</p>
+
+      <h2>Children's Privacy</h2>
+      <p>This site is not directed at children under 13. We do not knowingly collect any information from children.</p>
+
+      <h2>Your Rights</h2>
+      <p>Because we collect almost nothing, most data rights do not apply. If you have contacted us and want the records of our correspondence deleted, email <a href="mailto:foundation@mimaji.org">foundation@mimaji.org</a> and we will remove them.</p>
+
+      <h2>Changes</h2>
+      <p>If we change this policy, we will update the date at the top of this page. Check back occasionally.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about privacy? Email <a href="mailto:foundation@mimaji.org">foundation@mimaji.org</a> or reach us via <a href="/contact/">the contact page</a>.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal-section {
+    padding: 5rem 2rem;
+  }
+
+  .legal-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .last-updated {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .legal-inner h2 {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    color: var(--blue-deep);
+    margin-top: 2.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .legal-inner p {
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .legal-inner ul {
+    margin-bottom: 1.2rem;
+    padding-left: 1.5rem;
+  }
+
+  .legal-inner li {
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: 0.4rem;
+  }
+
+  .legal-inner a {
+    color: var(--blue);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .legal-inner strong {
+    color: var(--blue-deep);
+    font-weight: 600;
+  }
+</style>

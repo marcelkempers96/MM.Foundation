@@ -27,6 +27,15 @@ const fullTitle = title === 'Home'
 <meta name="description" content={description} />
 <meta name="keywords" content="clean water Africa, water crisis, water NGO Kenya, safe water access, East Africa water, MiMaji Foundation, water charity, water sanitation hygiene, WASH, water for all, clean water initiative, Nairobi water, Kenya water access, water efficiency Africa, water stress East Africa, irrigation Africa, crop water productivity, urban water management, water infrastructure failure, SDG 6 Africa, water inequality Nairobi, MajiMap" />
 <meta name="author" content="MiMaji Foundation" />
+<meta name="publisher" content="MiMaji Foundation" />
+<meta name="copyright" content="MiMaji Foundation" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="googlebot" content="index, follow" />
+<meta name="rating" content="general" />
+<meta name="geo.region" content="KE-30" />
+<meta name="geo.placename" content="Nairobi" />
+<meta name="geo.position" content="-1.286389;36.817223" />
+<meta name="ICBM" content="-1.286389, 36.817223" />
 <link rel="canonical" href={canonical} />
 
 <!-- Open Graph / Facebook -->
@@ -35,7 +44,9 @@ const fullTitle = title === 'Home'
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(ogImage, Astro.site).href} />
+<meta property="og:image:alt" content="MiMaji Foundation logo" />
 <meta property="og:site_name" content={siteName} />
+<meta property="og:locale" content="en_KE" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
@@ -43,3 +54,4 @@ const fullTitle = title === 'Home'
 <meta property="twitter:title" content={fullTitle} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(ogImage, Astro.site).href} />
+<meta property="twitter:image:alt" content="MiMaji Foundation logo" />
