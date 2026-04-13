@@ -30,18 +30,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <div class="majimap-wrap fade-in">
         <div id="majimap" class="majimap-canvas" role="region" aria-label="Interactive map of Nairobi water infrastructure"></div>
-        <div class="majimap-legend" aria-hidden="true">
-          <div class="legend-title">OSM water features</div>
-          <div class="legend-row"><span class="dot" style="background:#2ca58d"></span> Drinking water / tap / kiosk</div>
-          <div class="legend-row"><span class="dot" style="background:#8b5a2b"></span> Well / borehole</div>
-          <div class="legend-row"><span class="dot" style="background:#0a5eb5"></span> Water works / tower</div>
-          <div class="legend-row"><span class="dot" style="background:#1a9641"></span> Spring</div>
-          <div class="legend-divider"></div>
-          <div class="legend-title">WPDx status</div>
-          <div class="legend-row"><span class="dot" style="background:#1a9641"></span> Functional</div>
-          <div class="legend-row"><span class="dot" style="background:#fdae61"></span> Needs repair</div>
-          <div class="legend-row"><span class="dot" style="background:#d7191c"></span> Non&#8209;functional</div>
-          <div class="legend-row"><span class="dot" style="background:#6b7280"></span> Unknown</div>
+        <div class="majimap-legend" id="majimap-legend">
+          <button type="button" class="legend-toggle" id="majimap-legend-toggle" aria-expanded="true" aria-controls="majimap-legend-body">
+            <span class="legend-toggle-label">Legend &amp; Layers</span>
+            <span class="legend-toggle-caret" aria-hidden="true">&#9660;</span>
+          </button>
+          <div class="legend-body" id="majimap-legend-body">
+            <div class="legend-title">Layers</div>
+            <label class="legend-row legend-check"><input type="checkbox" id="toggle-boundaries" checked /> Nairobi boundaries (HDX)</label>
+            <label class="legend-row legend-check"><input type="checkbox" id="toggle-osm" checked /> Water points (OSM, live)</label>
+            <label class="legend-row legend-check"><input type="checkbox" id="toggle-wpdx" checked /> Water points (WPDx, Kenya)</label>
+            <div class="legend-divider"></div>
+            <div class="legend-title">OSM water features</div>
+            <div class="legend-row"><span class="dot" style="background:#2ca58d"></span> Drinking water / tap / kiosk</div>
+            <div class="legend-row"><span class="dot" style="background:#8b5a2b"></span> Well / borehole</div>
+            <div class="legend-row"><span class="dot" style="background:#0a5eb5"></span> Water works / tower</div>
+            <div class="legend-row"><span class="dot" style="background:#1a9641"></span> Spring</div>
+            <div class="legend-divider"></div>
+            <div class="legend-title">WPDx status</div>
+            <div class="legend-row"><span class="dot" style="background:#1a9641"></span> Functional</div>
+            <div class="legend-row"><span class="dot" style="background:#fdae61"></span> Needs repair</div>
+            <div class="legend-row"><span class="dot" style="background:#d7191c"></span> Non&#8209;functional</div>
+            <div class="legend-row"><span class="dot" style="background:#6b7280"></span> Unknown</div>
+          </div>
         </div>
       </div>
 
@@ -488,22 +499,62 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .majimap-legend {
     position: absolute;
     bottom: 1rem;
-    left: 1rem;
+    right: 1rem;
     background: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(6px);
     border-radius: 12px;
-    padding: 0.9rem 1.1rem;
     font-size: 0.78rem;
     color: var(--text);
     box-shadow: 0 6px 20px rgba(10, 94, 181, 0.12);
     border: 1px solid var(--border);
     z-index: 500;
-    max-width: 220px;
+    max-width: 240px;
+    font-family: inherit;
+  }
+
+  .majimap-legend .legend-toggle {
+    display: none;
+    width: 100%;
+    background: transparent;
+    border: 0;
+    padding: 0.6rem 0.9rem;
+    font: inherit;
+    font-size: 0.78rem;
+    color: var(--blue-deep);
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    text-align: left;
+  }
+
+  .majimap-legend .legend-toggle-label {
+    font-family: var(--serif);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .majimap-legend .legend-toggle-caret {
+    transition: transform 0.2s;
+    font-size: 0.6rem;
+  }
+
+  .majimap-legend.is-collapsed .legend-toggle-caret {
+    transform: rotate(-90deg);
+  }
+
+  .majimap-legend.is-collapsed .legend-body {
+    display: none;
+  }
+
+  .majimap-legend .legend-body {
+    padding: 0.9rem 1.1rem;
   }
 
   .majimap-legend .legend-title {
     font-family: var(--serif);
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--blue-deep);
@@ -516,6 +567,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     gap: 0.5rem;
     padding: 0.15rem 0;
     color: var(--text-light);
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+
+  .majimap-legend .legend-check {
+    cursor: pointer;
+    color: var(--text);
+    padding: 0.2rem 0;
+  }
+
+  .majimap-legend .legend-check input[type="checkbox"] {
+    margin: 0 0.15rem 0 0;
+    accent-color: var(--blue);
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
   }
 
   .majimap-legend .dot {
@@ -689,31 +756,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
   }
 
-  :global(.leaflet-control-layers) {
-    border-radius: 10px !important;
-    font-family: inherit !important;
-    font-size: 0.78rem !important;
-    width: auto !important;
-  }
-
-  :global(.leaflet-control-layers-expanded) {
-    padding: 8px 12px 8px 10px !important;
-    min-width: 0 !important;
-    width: auto !important;
-  }
-
-  :global(.leaflet-control-layers-expanded label) {
-    display: flex !important;
-    align-items: center;
-    white-space: nowrap;
-    margin: 2px 0 !important;
-    line-height: 1.4 !important;
-  }
-
-  :global(.leaflet-control-layers-expanded label input[type="checkbox"]) {
-    margin-right: 6px !important;
-  }
-
   /* Water droplet marker */
   :global(.water-droplet-marker) {
     background: transparent !important;
@@ -727,13 +769,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   @media (max-width: 700px) {
     .majimap-canvas {
-      height: 480px;
+      height: 460px;
     }
 
     .majimap-legend {
       font-size: 0.72rem;
-      padding: 0.7rem 0.85rem;
-      max-width: 180px;
+      max-width: 200px;
+      bottom: 0.6rem;
+      right: 0.6rem;
+    }
+
+    .majimap-legend .legend-toggle {
+      display: flex;
+    }
+
+    .majimap-legend .legend-body {
+      padding: 0.1rem 0.85rem 0.7rem;
+      max-height: 55vh;
+      overflow-y: auto;
+    }
+
+    .majimap-legend .legend-row {
+      font-size: 0.72rem;
+    }
+
+    .majimap-legend .legend-title {
+      font-size: 0.68rem;
     }
   }
 </style>
@@ -757,6 +818,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       var map = L.map('majimap', {
         scrollWheelZoom: false,
         zoomControl: true,
+        preferCanvas: true,
       }).setView([-1.286, 36.817], 11);
 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -769,15 +831,40 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       var osmWaterLayer = L.layerGroup().addTo(map);
       var wpdxLayer = L.layerGroup().addTo(map);
 
-      L.control.layers(
-        null,
-        {
-          'Nairobi boundaries (HDX)': boundariesLayer,
-          'Water points (OSM, live)': osmWaterLayer,
-          'Water points (WPDx, Kenya)': wpdxLayer,
-        },
-        { collapsed: false, position: 'topright' }
-      ).addTo(map);
+      // ---- Legend / layer toggles (single combined control) ----
+      function bindToggle(id, layer) {
+        var cb = document.getElementById(id);
+        if (!cb) return;
+        cb.addEventListener('change', function () {
+          if (cb.checked) map.addLayer(layer);
+          else map.removeLayer(layer);
+        });
+      }
+      bindToggle('toggle-boundaries', boundariesLayer);
+      bindToggle('toggle-osm', osmWaterLayer);
+      bindToggle('toggle-wpdx', wpdxLayer);
+
+      // Collapsible legend on mobile
+      var legendEl = document.getElementById('majimap-legend');
+      var legendBtn = document.getElementById('majimap-legend-toggle');
+      if (legendEl && legendBtn) {
+        var collapseByDefault = window.matchMedia('(max-width: 700px)').matches;
+        if (collapseByDefault) {
+          legendEl.classList.add('is-collapsed');
+          legendBtn.setAttribute('aria-expanded', 'false');
+        }
+        legendBtn.addEventListener('click', function () {
+          var collapsed = legendEl.classList.toggle('is-collapsed');
+          legendBtn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+        });
+      }
+
+      // Keep the legend interactive and prevent Leaflet from stealing
+      // touch / scroll events while the user is reading it.
+      if (legendEl && L.DomEvent) {
+        L.DomEvent.disableClickPropagation(legendEl);
+        L.DomEvent.disableScrollPropagation(legendEl);
+      }
 
       function fetchJSON(url) {
         return fetch(url).then(function (r) {
@@ -789,10 +876,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       // ----- Boundaries (HDX / OCHA) -----
       // Try admin2 (sub-counties) first, then admin1 (counties). Filter to Nairobi.
       function loadBoundaries() {
-        return fetchJSON('/data/majimap/ken_admin2.geojson')
+        return fetchJSON('/ken_admin2.geojson')
           .then(function (gj) { return { gj: gj, level: 'admin2' }; })
           .catch(function () {
-            return fetchJSON('/data/majimap/ken_admin1.geojson')
+            return fetchJSON('/ken_admin1.geojson')
               .then(function (gj) { return { gj: gj, level: 'admin1' }; });
           })
           .catch(function () { return null; });
@@ -817,7 +904,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       loadBoundaries().then(function (res) {
         if (!res) {
-          setStatus('Boundaries unavailable &mdash; drop ken_admin1/2.geojson into /public/data/majimap/');
+          setStatus('Boundaries unavailable &mdash; drop ken_admin1/2.geojson into /public/');
           return;
         }
         var gj = nairobiOnly(res.gj);
@@ -988,8 +1075,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       });
 
       // ----- WPDx water points (Water Point Data Exchange) -----
-      // Parses the Kenya-wide CSV client-side, filters to a Nairobi bbox,
-      // and plots each row. Colouring reflects functional status.
+      // Prefers a pre-filtered Nairobi-only JSON (~33 KB). Falls back to
+      // parsing the full Kenya CSV (~6.5 MB) only if that export is missing.
       var NAIROBI_BBOX = { minLat: -1.48, maxLat: -1.15, minLng: 36.64, maxLng: 37.12 };
 
       // Tiny RFC-4180-aware CSV parser (handles quoted fields + embedded commas)
@@ -1035,9 +1122,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         for (var i = 0; i < candidates.length; i++) {
           var k = candidates[i];
           if (rec[k] != null && rec[k] !== '') return rec[k];
-          // case-insensitive fallback
+          var kl = k.toLowerCase().replace(/^#/, '');
           for (var key in rec) {
-            if (key.toLowerCase() === k.toLowerCase() && rec[key] !== '') return rec[key];
+            var keyl = key.toLowerCase().replace(/^#/, '');
+            if (keyl === kl && rec[key] !== '') return rec[key];
           }
         }
         return '';
@@ -1051,59 +1139,76 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         return '#6b7280';
       }
 
-      function loadWPDx() {
-        return fetch('/Kenya_Data_20260412.csv').then(function (r) {
-          if (!r.ok) throw new Error('WPDx CSV HTTP ' + r.status);
-          return r.text();
+      function addWPDxPoint(name, adm2, source, tech, status, year, mgmt, pay, lat, lng) {
+        var marker = L.marker([lat, lng], {
+          icon: dropletIcon(wpdxStatusColor(status), 28),
+          keyboard: false,
         });
+        var html =
+          '<strong>' + name + '</strong><br/>' +
+          (adm2 ? '<em style="color:#6b7280">' + adm2 + '</em><br/>' : '') +
+          (source ? 'Source: ' + source + '<br/>' : '') +
+          (tech ? 'Tech: ' + tech + '<br/>' : '') +
+          (status ? 'Status: ' + status + '<br/>' : '') +
+          (year ? 'Installed: ' + year + '<br/>' : '') +
+          (mgmt ? 'Management: ' + mgmt + '<br/>' : '') +
+          (pay ? 'Pay: ' + pay : '');
+        marker.bindPopup(html);
+        marker.addTo(wpdxLayer);
       }
 
-      loadWPDx().then(function (csv) {
+      function renderWPDxFromCSV(csv) {
         var parsed = parseCSV(csv);
         var records = parsed.records;
         var added = 0;
-
         for (var i = 0; i < records.length; i++) {
           var rec = records[i];
-          var lat = parseFloat(pickKey(rec, ['lat_deg', 'latitude', 'lat', '#lat']));
-          var lng = parseFloat(pickKey(rec, ['lon_deg', 'longitude', 'long', 'lng', '#lon']));
+          var lat = parseFloat(pickKey(rec, ['#lat_deg', 'lat_deg', 'latitude', 'lat']));
+          var lng = parseFloat(pickKey(rec, ['#lon_deg', 'lon_deg', 'longitude', 'long', 'lng']));
           if (!isFinite(lat) || !isFinite(lng)) continue;
           if (lat < NAIROBI_BBOX.minLat || lat > NAIROBI_BBOX.maxLat) continue;
           if (lng < NAIROBI_BBOX.minLng || lng > NAIROBI_BBOX.maxLng) continue;
-
-          var status = pickKey(rec, ['status_id', 'status', '#status_id']);
-          var source = pickKey(rec, ['water_source', '#source', '#water_source_clean']);
-          var tech = pickKey(rec, ['water_tech', '#water_tech', '#water_tech_clean']);
-          var name = pickKey(rec, ['water_point_name', '#water_point_name', 'source']) || 'Water point';
-          var year = pickKey(rec, ['install_year', '#install_year']);
-          var pay = pickKey(rec, ['pay', '#pay']);
-          var mgmt = pickKey(rec, ['management', '#management']);
-          var adm2 = pickKey(rec, ['adm2', '#adm2']);
-
-          var marker = L.marker([lat, lng], {
-            icon: dropletIcon(wpdxStatusColor(status), 28),
-            keyboard: false,
-          });
-
-          var html =
-            '<strong>' + name + '</strong><br/>' +
-            (adm2 ? '<em style="color:#6b7280">' + adm2 + '</em><br/>' : '') +
-            (source ? 'Source: ' + source + '<br/>' : '') +
-            (tech ? 'Tech: ' + tech + '<br/>' : '') +
-            (status ? 'Status: ' + status + '<br/>' : '') +
-            (year ? 'Installed: ' + year + '<br/>' : '') +
-            (mgmt ? 'Management: ' + mgmt + '<br/>' : '') +
-            (pay ? 'Pay: ' + pay : '');
-          marker.bindPopup(html);
-          marker.addTo(wpdxLayer);
+          addWPDxPoint(
+            pickKey(rec, ['water_point_name', 'source']) || 'Water point',
+            pickKey(rec, ['#adm2', 'adm2']),
+            pickKey(rec, ['#water_source', 'water_source']),
+            pickKey(rec, ['#water_tech', 'water_tech']),
+            pickKey(rec, ['#status_id', 'status_id', 'status']),
+            pickKey(rec, ['#install_year', 'install_year']),
+            pickKey(rec, ['#management', 'management']),
+            pickKey(rec, ['#pay', 'pay']),
+            lat, lng
+          );
           added++;
         }
+        return added;
+      }
 
-        var wpdxCountEl = document.getElementById('majimap-wpdx-count');
-        if (wpdxCountEl) wpdxCountEl.textContent = String(added);
+      function renderWPDxFromJSON(rows) {
+        for (var i = 0; i < rows.length; i++) {
+          var r = rows[i];
+          addWPDxPoint(r.n || 'Water point', r.a, r.s, r.t, r.st, r.y, r.m, r.p, r.lat, r.lng);
+        }
+        return rows.length;
+      }
+
+      // Fast path: tiny pre-filtered JSON. Fallback to full CSV only if missing.
+      fetchJSON('/data/majimap/wpdx_nairobi.json').then(function (rows) {
+        var added = renderWPDxFromJSON(rows);
+        var el = document.getElementById('majimap-wpdx-count');
+        if (el) el.textContent = String(added);
       }).catch(function () {
-        var wpdxCountEl = document.getElementById('majimap-wpdx-count');
-        if (wpdxCountEl) wpdxCountEl.textContent = '0';
+        return fetch('/Kenya_Data_20260412.csv').then(function (r) {
+          if (!r.ok) throw new Error('WPDx CSV HTTP ' + r.status);
+          return r.text();
+        }).then(function (csv) {
+          var added = renderWPDxFromCSV(csv);
+          var el = document.getElementById('majimap-wpdx-count');
+          if (el) el.textContent = String(added);
+        });
+      }).catch(function () {
+        var el = document.getElementById('majimap-wpdx-count');
+        if (el) el.textContent = '0';
       });
     }
 
