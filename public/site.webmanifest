@@ -1,0 +1,17 @@
+{
+  "name": "MiMaji Foundation",
+  "short_name": "MiMaji",
+  "description": "Clean water access for every community in East Africa.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#0A5EB5",
+  "icons": [
+    {
+      "src": "/MiMaji-Foundation-Logo-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
