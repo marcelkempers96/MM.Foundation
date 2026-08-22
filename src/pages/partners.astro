@@ -80,6 +80,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  <!-- Strategic & Advisory -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">Strategic Advisory</div>
+      <div class="section-title">Working With Specialists</div>
+      <div class="advisory-grid fade-in">
+        <div class="advisory-card">
+          <h4><a href="https://transitionslab.org" target="_blank" rel="noopener">Transitions Lab</a></h4>
+          <p>We work with <a href="https://transitionslab.org" target="_blank" rel="noopener">Transitions Lab</a> on digital strategy and systems thinking for sustainable development initiatives. Their approach to navigating complex transitions aligns with how we build MajiMap and design programmes that communities can own long-term.</p>
+          <span class="advisory-type">Digital Strategy &amp; Innovation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Become a Partner CTA -->
   <section class="cta-section">
     <div class="section-title">Become a Partner</div>
@@ -235,6 +250,54 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--blue);
     font-weight: 600;
     font-size: 0.9rem;
+  }
+
+  /* Advisory */
+  .advisory-grid {
+    margin-top: 2rem;
+  }
+
+  .advisory-card {
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    max-width: 600px;
+  }
+
+  .advisory-card h4 {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--blue-deep);
+    margin-bottom: 0.6rem;
+  }
+
+  .advisory-card h4 a {
+    color: var(--blue-deep);
+    text-decoration: none;
+  }
+
+  .advisory-card h4 a:hover {
+    color: var(--blue);
+  }
+
+  .advisory-card p {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 0.8rem;
+  }
+
+  .advisory-card a {
+    color: var(--blue);
+    font-weight: 600;
+  }
+
+  .advisory-type {
+    font-size: 0.72rem;
+    color: var(--teal);
+    font-weight: 600;
+    letter-spacing: 0.04em;
   }
 
   @media (max-width: 900px) {
